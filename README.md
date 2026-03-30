@@ -10,7 +10,7 @@
 ![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
 ![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)
 
-### Uma reprodução da interface da Netflix desenvolvida como projeto de estudo e portfólio durante a Imersão Alura.
+### Uma reprodução da interface da Netflix desenvolvida como projeto de estudo e portfólio durante a Imersão Alura - Front-End na Era da IA.
 
 [Ver Demo](https://imersao-netflix-git-main-tissianydelmiros-projects.vercel.app) · [Reportar Bug](https://github.com/TissianyDelmiro/Imersao-netflix-/issues)
 
@@ -22,7 +22,23 @@
 
 > **Disclaimer:** Este projeto foi desenvolvido exclusivamente para **fins educacionais e de portfólio**. Não possui qualquer afiliação, vínculo ou endosso da Netflix Inc. Todas as marcas, logotipos e conteúdos pertencem aos seus respectivos proprietários.
 
-Este clone da interface da Netflix foi construído do zero com **HTML, CSS e JavaScript puro**, sem o uso de frameworks ou bibliotecas front-end. O projeto demonstra habilidades práticas em:
+Este projeto nasceu na **[Imersão Alura - Front-End na Era da IA](https://www.alura.com.br/imersao)**, uma imersão voltada para entender como páginas web são criadas e dar os primeiros passos no desenvolvimento front-end com apoio da Inteligência Artificial.
+
+A proposta original da imersão era construir uma página inspirada na Netflix utilizando HTML, CSS e JavaScript. A partir dessa base, expandi o projeto significativamente, adicionando novas páginas, funcionalidades e integrações.
+
+### 🤖 Ferramentas de IA utilizadas no desenvolvimento
+
+Este projeto foi construído com o apoio de ferramentas de Inteligência Artificial, dentro da proposta da imersão de aprender a programar com auxílio de IA:
+
+| Ferramenta | Como foi utilizada |
+|---|---|
+| **GitHub Copilot** | Autocompletar e sugestões de código durante a escrita do HTML/CSS/JS |
+| **Claude Code (Anthropic)** | Apoio no desenvolvimento do front-end, estruturação de componentes, CSS avançado, lógica JavaScript e configuração do deploy |
+| **Google Gemini** | Geração das imagens de avatar dos perfis |
+
+> A utilização de IA como ferramenta de apoio ao desenvolvimento é uma habilidade cada vez mais valorizada no mercado. Neste projeto, a IA foi usada como assistente, enquanto as decisões de design, estrutura e funcionalidades foram tomadas pela desenvolvedora.
+
+### Habilidades praticadas neste projeto:
 
 - Desenvolvimento front-end responsivo
 - Manipulação do DOM com JavaScript vanilla
@@ -30,8 +46,7 @@ Este clone da interface da Netflix foi construído do zero com **HTML, CSS e Jav
 - Deploy e configuração de serverless functions
 - Versionamento de código com Git/GitHub
 - Gerenciamento de estado com localStorage
-
-O projeto foi criado durante a **Imersão Alura**, com funcionalidades expandidas além do escopo original da imersão.
+- Uso de IA como ferramenta de produtividade
 
 <img width="1920" height="945" alt="Tela de Perfis" src="https://github.com/user-attachments/assets/a4487e51-7801-40cd-be4b-c785072acd8f" />
 <img width="1920" height="1815" alt="Catálogo" src="https://github.com/user-attachments/assets/5c18957c-211f-4c16-a0ff-1a880cfe11e0" />
@@ -196,11 +211,12 @@ Este projeto permitiu praticar e consolidar conhecimentos em:
 
 - **HTML Semântico** - Uso correto de tags para acessibilidade
 - **CSS Avançado** - Gradientes complexos, animações, pseudo-elementos, responsividade
-- **JavaScript Vanilla** - Sem dependência de frameworks, DOM manipulation puro
+- **JavaScript Vanilla** - Sem dependência de frameworks, manipulação do DOM puro
 - **Integração com APIs** - Consumo de API REST com fetch
 - **Segurança** - Proteção de chaves de API com backend proxy
 - **Deploy** - Configuração de CI/CD com Vercel e serverless functions
 - **Git** - Versionamento, commits semânticos, .gitignore
+- **IA como ferramenta** - Uso de Copilot e Claude Code como assistentes de desenvolvimento
 
 ---
 
@@ -212,7 +228,7 @@ Este projeto permitiu praticar e consolidar conhecimentos em:
 
 [![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/TissianyDelmiro)
 
-Projeto desenvolvido durante a [Imersão Alura](https://www.alura.com.br/imersao) com funcionalidades expandidas.
+Projeto desenvolvido durante a [Imersão Alura - Front-End na Era da IA](https://www.alura.com.br/imersao), com funcionalidades expandidas além do escopo original.
 
 </div>
 
@@ -223,9 +239,17 @@ Projeto desenvolvido durante a [Imersão Alura](https://www.alura.com.br/imersao
 | Recurso | Fonte |
 |---|---|
 | Avatares dos perfis | Gerados por IA com **Google Gemini** |
-| Posters de filmes e séries | Baixados de fontes públicas (TMDB, Wikipedia, IMDb) |
+| Posters de filmes e séries | Baixados de fontes públicas (TMDB, Wikipedia, IMDb) e salvos localmente |
 | Logo Netflix | Wikimedia Commons |
 | Ícones | Font Awesome |
+
+### 🤖 Ferramentas de IA
+
+| Ferramenta | Uso |
+|---|---|
+| [GitHub Copilot](https://github.com/features/copilot) | Autocompletar código |
+| [Claude Code (Anthropic)](https://claude.ai/claude-code) | Assistente de desenvolvimento |
+| [Google Gemini](https://gemini.google.com) | Geração de imagens |
 
 ---
 
@@ -241,8 +265,8 @@ Este projeto é **exclusivamente para fins educacionais e de portfólio**. Não 
 
 <div align="center">
 
-Desenvolvido com ❤️ por **Tissiany Delmiro** · 2026
+Desenvolvido com ❤️ e IA por **Tissiany Delmiro** · 2026
 
-*Projeto de estudo - Imersão Alura*
+*Projeto de estudo - Imersão Alura: Front-End na Era da IA*
 
 </div>

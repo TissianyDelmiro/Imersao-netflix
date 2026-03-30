@@ -663,14 +663,13 @@ section {
 
 /* Foco para navegação por teclado (outline padrão) */
 .profile:focus {
-    outline: 2px solid var(--border-hover); /* Borda dinâmica de 2px */
-    outline-offset: 4px; /* Espaçamento de 4px entre outline e elemento */
+    outline: none;
 }
 
-/* Foco visível para navegação por teclado (mais específico) */
+/* Foco visível apenas para navegação por teclado (Tab) */
 .profile:focus-visible {
-    outline: 2px solid var(--border-hover); /* Borda dinâmica de 2px */
-    outline-offset: 4px; /* Espaçamento de 4px entre outline e elemento */
+    outline: 2px solid var(--border-hover);
+    outline-offset: 4px;
 }
 
 /* Foco no botão de toggle */

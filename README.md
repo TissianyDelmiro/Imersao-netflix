@@ -34,7 +34,7 @@ Este projeto foi construído com o apoio de ferramentas de Inteligência Artific
 |---|---|
 | **GitHub Copilot** | Autocompletar e sugestões de código durante a escrita do HTML/CSS/JS |
 | **Claude Code (Anthropic)** | Apoio no desenvolvimento do front-end, estruturação de componentes, CSS avançado, lógica JavaScript e configuração do deploy |
-| **Google Gemini** | Geração das imagens de avatar dos perfis |
+| **Google Gemini** | Geração das imagens de avatar dos perfis e do banner hero do catálogo |
 
 > A utilização de IA como ferramenta de apoio ao desenvolvimento é uma habilidade cada vez mais valorizada no mercado. Neste projeto, a IA foi usada como assistente, enquanto as decisões de design, estrutura e funcionalidades foram tomadas pela desenvolvedora.
 
@@ -88,6 +88,9 @@ Este projeto foi construído com o apoio de ferramentas de Inteligência Artific
 - Interface fiel à Netflix original
 - Backgrounds com gradientes e texturas customizadas (CSS puro)
 - Animações e transições suaves
+- Arco luminoso com glow pulsante no hero do catálogo (CSS puro)
+- Separador com efeito de profundidade na página de detalhes
+- Banner hero do catálogo com imagem gerada por **Google Gemini**
 - Dark/Light mode na tela de perfis
 - Totalmente responsivo (Desktop, Tablet e Mobile)
 - Scrollbar personalizada e seleção de texto estilizada
@@ -115,7 +118,7 @@ Este projeto foi construído com o apoio de ferramentas de Inteligência Artific
 | **OMDB API** | Dados dinâmicos de filmes e séries |
 | **Vercel** | Hospedagem com Serverless Functions |
 | **Webmanifest & PWA** | Configuração de instalação mobile e identidade visual nativa |
-| **Favicon.io** | Geração de assets multiplataforma (Android, iOS e Web) |
+| **RedKetchup** | Geração de favicon e assets multiplataforma (Android, iOS e Web) |
 | **Font Awesome / Google Fonts** | Ícones vetoriais e tipografia personalizada |
 | **Git/GitHub** | Controle de versão e documentação |
 
@@ -141,10 +144,15 @@ Imersao-netflix/
 │       ├── top10/              # Posters do Top 10
 │       ├── netflix/            # Posters Originais Netflix
 │       └── padrao/             # Imagens padrão (fallback)
-        ├── favicon_io/         # Pacote completo de ícones e PWA Manifest
+        ├── redketchup/         # Pacote completo de ícones e PWA Manifest
 │       │  ├── favicon.ico
+│       │  ├── favicon-16x16.png
+│       │  ├── favicon-32x32.png
+│       │  ├── android-chrome-192x192.png
+│       │  ├── android-chrome-512x512.png
 │       │  ├── apple-touch-icon.png
 │       │  └── site.webmanifest
+│       ├── hero-catalogo.png   # Banner hero do catálogo (gerado por Gemini)
 │       ├── capa-final.jpg      # Imagem de preview para redes sociais
 ├── catalogo/
 │   ├── catalogo.html           # Página principal do catálogo
@@ -253,6 +261,7 @@ Projeto desenvolvido durante a [Imersão Alura - Front-End na Era da IA](https:/
 | Recurso | Fonte |
 |---|---|
 | Avatares dos perfis | Gerados por IA com **Google Gemini** |
+| Banner hero do catálogo | Gerado por IA com **Google Gemini** |
 | Posters de filmes e séries | Baixados de fontes públicas (TMDB, Wikipedia, IMDb) e salvos localmente |
 | Logo Netflix | Wikimedia Commons |
 | Ícones | Font Awesome |
@@ -274,7 +283,7 @@ Os backgrounds customizados das páginas (catálogo e detalhes) foram criados in
 |---|---|
 | [GitHub Copilot](https://github.com/features/copilot) | Autocompletar código |
 | [Claude Code (Anthropic)](https://claude.ai/claude-code) | Assistente de desenvolvimento |
-| [Google Gemini](https://gemini.google.com) | Geração de imagens dos avatares |
+| [Google Gemini](https://gemini.google.com) | Geração de imagens dos avatares e banner hero do catálogo |
 
 ---
 

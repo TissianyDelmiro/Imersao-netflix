@@ -52,6 +52,8 @@ Este projeto foi construído com o apoio de ferramentas de Inteligência Artific
 <img width="1920" height="1815" alt="Catálogo" src="https://github.com/user-attachments/assets/5c18957c-211f-4c16-a0ff-1a880cfe11e0" />
 <img width="1920" height="2485" alt="Catálogo Completo" src="https://github.com/user-attachments/assets/c2e413c5-fd57-4aab-afcc-347083e03d58" />
 <img width="1920" height="1333" alt="Detalhes do Filme" src="https://github.com/user-attachments/assets/d3eabc66-3edb-4dbd-b988-cf1634636f0f" />
+<img width="1088" height="903" alt="image" src="https://github.com/user-attachments/assets/4604711c-931d-4806-ab8c-e3215edad22b" />
+
 
 ---
 
@@ -90,7 +92,7 @@ Este projeto foi construído com o apoio de ferramentas de Inteligência Artific
 - Totalmente responsivo (Desktop, Tablet e Mobile)
 - Scrollbar personalizada e seleção de texto estilizada
 
-**Paleta de Cores:**
+**Pesquisa de referências de Cores:**
 
 <img width="740" height="493" alt="Paleta de Cores" src="https://github.com/user-attachments/assets/a5987b67-ea79-4c68-a9d0-64ba5046778c" />
 <img width="740" height="423" alt="Paleta de Cores 2" src="https://github.com/user-attachments/assets/6dca976c-ad9f-4f1b-aac5-93101be67b4c" />

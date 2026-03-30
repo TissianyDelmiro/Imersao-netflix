@@ -66,6 +66,13 @@ Este é um clone da interface da Netflix desenvolvido com HTML, CSS e JavaScript
 - Animações e transições suaves
 - Dark/Light mode na tela de perfis
 - Totalmente responsivo (Desktop, Tablet, Mobile)
+  
+* **Paleta de Cores:**
+<img width="740" height="493" alt="image" src="https://github.com/user-attachments/assets/a5987b67-ea79-4c68-a9d0-64ba5046778c" />
+<img width="740" height="423" alt="image" src="https://github.com/user-attachments/assets/6dca976c-ad9f-4f1b-aac5-93101be67b4c" />
+
+
+
 
 ---
 

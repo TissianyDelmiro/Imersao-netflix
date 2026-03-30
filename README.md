@@ -1,6 +1,8 @@
-# 🎬 Netflix Clone - Projeto de Estudo
+# 🎬 TissyFlix - Projeto de Estudo
 
 <div align="center">
+
+[![Capa do Projeto](assets/imagens/capa-projeto.png)](https://tissyflix-dev.vercel.app/)
 
 ![Status](https://img.shields.io/badge/Status-Concluído-brightgreen?style=for-the-badge)
 ![Netflix Clone](https://img.shields.io/badge/Netflix-Clone-E50914?style=for-the-badge&logo=netflix&logoColor=white)

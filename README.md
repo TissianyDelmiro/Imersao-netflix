@@ -92,6 +92,11 @@ Este projeto foi construído com o apoio de ferramentas de Inteligência Artific
 - Totalmente responsivo (Desktop, Tablet e Mobile)
 - Scrollbar personalizada e seleção de texto estilizada
 
+### 🚀 Diferenciais de Engenharia
+* **Experiência PWA (Progressive Web App):** O projeto utiliza um arquivo `site.webmanifest` e um conjunto completo de ícones Android/iOS. Isso permite que o usuário "instale" o **TissyFlix** no smartphone, aparecendo com ícone e nome personalizados na gaveta de aplicativos.
+* **Otimização de Assets:** Implementação de Favicon Pack profissional (arquivos `.ico` e `.png` em múltiplas resoluções) para garantir nitidez em todas as abas de navegadores e sistemas operacionais.
+* **Social Graph & SEO:** Configuração avançada de meta tags (**Open Graph** e **Twitter Cards**) com imagens de preview otimizadas para compartilhamento no WhatsApp e LinkedIn.
+
 **Pesquisa de referências de Cores:**
 
 <img width="740" height="493" alt="Paleta de Cores" src="https://github.com/user-attachments/assets/a5987b67-ea79-4c68-a9d0-64ba5046778c" />
@@ -104,15 +109,15 @@ Este projeto foi construído com o apoio de ferramentas de Inteligência Artific
 | Tecnologia | Aplicação |
 |---|---|
 | **HTML5** | Estrutura semântica e acessibilidade |
-| **CSS3** | Estilização avançada, gradientes, animações, Flexbox, Grid, media queries |
-| **JavaScript (ES6+)** | Lógica de negócio, manipulação do DOM, localStorage, fetch API |
-| **Node.js** | Backend para proxy seguro da API |
-| **Express.js** | Servidor de desenvolvimento local |
-| **OMDB API** | Dados de filmes e séries (busca e detalhes) |
-| **Vercel** | Hospedagem com serverless functions |
-| **Font Awesome** | Biblioteca de ícones |
-| **Google Fonts** | Tipografia personalizada |
-| **Git/GitHub** | Controle de versão |
+| **CSS3** | Estilização avançada, gradientes, animações e Responsividade |
+| **JavaScript (ES6+)** | Lógica de negócio, manipulação do DOM e integração com  APIs |
+| **Node.js / Express** | Backend para proxy seguro da API e servidor local |
+| **OMDB API** | Dados dinâmicos de filmes e séries |
+| **Vercel** | Hospedagem com Serverless Functions |
+| **Webmanifest & PWA** | Configuração de instalação mobile e identidade visual nativa |
+| **Favicon.io** | Geração de assets multiplataforma (Android, iOS e Web) |
+| **Font Awesome / Google Fonts** | Ícones vetoriais e tipografia personalizada |
+| **Git/GitHub** | Controle de versão e documentação |
 
 ---
 
@@ -136,6 +141,11 @@ Imersao-netflix/
 │       ├── top10/              # Posters do Top 10
 │       ├── netflix/            # Posters Originais Netflix
 │       └── padrao/             # Imagens padrão (fallback)
+        ├── favicon_io/         # Pacote completo de ícones e PWA Manifest
+│       │  ├── favicon.ico
+│       │  ├── apple-touch-icon.png
+│       │  └── site.webmanifest
+│       ├── capa-final.jpg      # Imagem de preview para redes sociais
 ├── catalogo/
 │   ├── catalogo.html           # Página principal do catálogo
 │   ├── catalogo.css            # Estilos do catálogo

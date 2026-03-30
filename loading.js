@@ -30,15 +30,15 @@
 
             // Anima os elementos da página
             animatePageContent();
-        }, 800);
+        }, 1800);
     });
 
-    // Fallback: esconde após 4 segundos
+    // Fallback: esconde após 5 segundos
     setTimeout(() => {
         loading.classList.add('hidden');
         document.body.style.overflow = '';
         animatePageContent();
-    }, 4000);
+    }, 5000);
 })();
 
 // Anima os elementos da página ao carregar
@@ -122,7 +122,7 @@ function showLoading(duration) {
         loading.classList.remove('hidden');
         setTimeout(() => {
             loading.classList.add('hidden');
-        }, duration || 600);
+        }, duration || 1000);
     }
 }
 
@@ -145,7 +145,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.addEventListener('click', (e) => {
         const arrow = e.target.closest('.nav-arrow');
         if (arrow) {
-            showLoading(400);
+            showLoading(700);
         }
     });
 
@@ -153,7 +153,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.addEventListener('click', (e) => {
         const card = e.target.closest('.netflix-card');
         if (card) {
-            showLoading(500);
+            showLoading(900);
         }
     });
 
@@ -161,7 +161,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.addEventListener('click', (e) => {
         const profileItem = e.target.closest('.dropdown-profile-item');
         if (profileItem) {
-            showLoading(800);
+            showLoading(1200);
         }
     });
 
@@ -170,7 +170,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (searchInput) {
         searchInput.addEventListener('keydown', (e) => {
             if (e.key === 'Enter' && searchInput.value.trim().length >= 2) {
-                showLoading(500);
+                showLoading(900);
             }
         });
     }
@@ -179,7 +179,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.addEventListener('click', (e) => {
         const movieCard = e.target.closest('.movie-card:not(.netflix-card)');
         if (movieCard) {
-            showLoading(600);
+            showLoading(1000);
         }
     });
 
@@ -187,7 +187,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const btnPlay = document.getElementById('btn-play');
     if (btnPlay) {
         btnPlay.addEventListener('click', () => {
-            showLoading(400);
+            showLoading(700);
         });
     }
 });

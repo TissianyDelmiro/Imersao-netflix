@@ -509,6 +509,7 @@ a:hover {
     margin-bottom: 20px;
     overflow: hidden;
     animation: heroFadeIn 0.6s ease-out;
+    scroll-margin-top: 70px;
 }
 
 @keyframes heroFadeIn {
@@ -607,7 +608,7 @@ a:hover {
 /* Botão de fechar */
 .hero-close {
     position: absolute;
-    top: 20px;
+    top: 80px;
     right: 4%;
     width: 40px;
     height: 40px;
@@ -785,6 +786,14 @@ a:hover {
 
 /* Responsivo */
 @media (max-width: 768px) {
+    .hero-grid-banner {
+        margin-top: 60px;
+    }
+
+    .hero-grid-content {
+        bottom: 10%;
+    }
+
     .hero-grid-title {
         font-size: 2rem;
     }
@@ -885,11 +894,42 @@ a:hover {
     .hero-grid-banner {
         height: 350px;
     }
+
+    .hero-grid-arc {
+        bottom: -30px;
+        height: 60px;
+    }
+
+    .hero-grid-arc::before {
+        height: 120px;
+    }
+
+    .hero-grid-arc::after {
+        height: 35px;
+    }
 }
 
 @media (max-width: 480px) {
     .hero-grid-banner {
         height: 250px;
+    }
+
+    .hero-grid-arc {
+        bottom: -15px;
+        height: 40px;
+    }
+
+    .hero-grid-arc::before {
+        height: 80px;
+        box-shadow:
+            0 0 0 1px #e50914,
+            0 5px 12px 3px rgba(229, 9, 20, 0.25),
+            0 12px 30px 6px rgba(229, 9, 20, 0.12),
+            0 30px 50px 20px rgba(0, 0, 0, 0.9);
+    }
+
+    .hero-grid-arc::after {
+        height: 25px;
     }
 }
 

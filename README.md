@@ -24,7 +24,7 @@ Este é um clone da interface da Netflix desenvolvido com HTML, CSS e JavaScript
 > **Nota:** Este projeto é exclusivamente para fins educacionais e não possui qualquer afiliação com a Netflix.
 <img width="1920" height="945" alt="image" src="https://github.com/user-attachments/assets/a4487e51-7801-40cd-be4b-c785072acd8f" />
 <img width="1920" height="1815" alt="image" src="https://github.com/user-attachments/assets/5c18957c-211f-4c16-a0ff-1a880cfe11e0" />
-<img width="1920" height="1815" alt="image" src="https://github.com/user-attachments/assets/09d3c4ae-7b3a-496f-b258-f4e49ab58f62" />
+<img width="1920" height="2485" alt="image" src="https://github.com/user-attachments/assets/c2e413c5-fd57-4aab-afcc-347083e03d58" />
 <img width="1920" height="1333" alt="image" src="https://github.com/user-attachments/assets/d3eabc66-3edb-4dbd-b988-cf1634636f0f" />
 
 

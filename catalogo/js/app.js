@@ -392,8 +392,8 @@ function showHero(item) {
 
     hero.style.display = 'block';
 
-    // Scroll suave para o topo
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    // Scroll suave até o banner ficar visível
+    hero.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
 // ========== MAIN ==========

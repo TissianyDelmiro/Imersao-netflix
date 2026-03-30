@@ -138,7 +138,51 @@ body::before {
     height: 100%;
     background:
         linear-gradient(90deg, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.5) 35%, transparent 65%),
-        linear-gradient(180deg, rgba(0,0,0,0.3) 0%, transparent 30%, transparent 60%, rgba(10,10,10,1) 100%);
+        linear-gradient(180deg, rgba(0,0,0,0.3) 0%, transparent 30%, transparent 60%, rgba(13,0,22,1) 100%);
+}
+
+/* Arco curvo na parte inferior do hero */
+.hero-gradient::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120%;
+    height: 60px;
+    background: #0d0016;
+    border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+}
+
+/* Separador com profundidade fora do hero */
+.hero-arc-separator {
+    position: relative;
+    z-index: 5;
+    width: 100%;
+    height: 1px;
+    margin-top: -30px;
+    background: linear-gradient(90deg,
+        transparent 0%,
+        rgba(229, 9, 20, 0.4) 20%,
+        rgba(229, 9, 20, 0.6) 50%,
+        rgba(229, 9, 20, 0.4) 80%,
+        transparent 100%
+    );
+}
+
+.hero-arc-separator::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 5%;
+    width: 90%;
+    height: 80px;
+    background: radial-gradient(ellipse at 50% 0%,
+        rgba(0, 0, 0, 0.7) 0%,
+        rgba(0, 0, 0, 0.3) 40%,
+        transparent 70%
+    );
+    pointer-events: none;
 }
 
 .hero-content {

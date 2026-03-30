@@ -665,11 +665,238 @@ a:hover {
     }
 }
 
+/* ========== HERO BANNER IMAGEM (TOPO) ========== */
+.hero-grid-banner {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+    z-index: 2;
+    margin-top: 70px;
+}
+
+/* Imagem do hero */
+.hero-banner-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 30%;
+    display: block;
+    transform: scale(1.05);
+}
+
+/* Gradiente escuro + desfoque */
+.hero-grid-gradient {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:
+        radial-gradient(ellipse at 50% 50%, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0.5) 70%),
+        linear-gradient(180deg, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.2) 20%, rgba(0,0,0,0.2) 60%, rgba(0,0,0,0.9) 100%);
+    z-index: 1;
+}
+
+/* Conteúdo sobre o hero */
+.hero-grid-content {
+    position: absolute;
+    bottom: 15%;
+    left: 0;
+    width: 100%;
+    z-index: 2;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.hero-grid-title {
+    font-size: 3rem;
+    font-weight: 900;
+    color: #ffffff;
+    line-height: 1.1;
+    margin-bottom: 12px;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.9);
+}
+
+.hero-grid-subtitle {
+    font-size: 1.1rem;
+    color: #d4d4d4;
+    margin-bottom: 25px;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9);
+}
+
+/* Form email + botão */
+.hero-grid-form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.hero-email {
+    flex: 1;
+    padding: 16px 20px;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-right: none;
+    border-radius: 6px 0 0 6px;
+    color: #ffffff;
+    font-size: 1rem;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.hero-email::placeholder {
+    color: #999;
+}
+
+.hero-email:focus {
+    border-color: rgba(255, 255, 255, 0.5);
+    background: rgba(0, 0, 0, 0.75);
+}
+
+.hero-btn-start {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 16px 28px;
+    background: #e50914;
+    color: #ffffff;
+    border: 1px solid #e50914;
+    border-radius: 0 6px 6px 0;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.3s ease;
+}
+
+.hero-btn-start:hover {
+    background: #f40612;
+    box-shadow: 0 4px 20px rgba(229, 9, 20, 0.5);
+}
+
+.hero-btn-start:active {
+    transform: scale(0.97);
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .hero-grid-title {
+        font-size: 2rem;
+    }
+
+    .hero-grid-subtitle {
+        font-size: 0.95rem;
+    }
+
+    .hero-grid-form {
+        max-width: 450px;
+    }
+
+    .hero-email {
+        padding: 14px 16px;
+        font-size: 0.9rem;
+    }
+
+    .hero-btn-start {
+        padding: 14px 20px;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-grid-title {
+        font-size: 1.5rem;
+    }
+
+    .hero-grid-form {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .hero-email {
+        border-radius: 6px;
+        border-right: 1px solid rgba(255, 255, 255, 0.25);
+        width: 100%;
+    }
+
+    .hero-btn-start {
+        border-radius: 6px;
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* Arco curvo U rosa/vermelho */
+.hero-grid-arc {
+    position: absolute;
+    bottom: -60px;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    z-index: 3;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+/* Sombra escura abaixo do arco para esconder vazamento */
+.hero-grid-arc::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: -5%;
+    width: 110%;
+    height: 50px;
+    background: #050505;
+    z-index: 1;
+}
+
+/* Elipse com borda colorida */
+.hero-grid-arc::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120%;
+    height: 200px;
+    border-radius: 50%;
+    background: transparent;
+    box-shadow:
+        0 0 0 2px #e50914,
+        0 8px 20px 5px rgba(229, 9, 20, 0.35),
+        0 18px 45px 10px rgba(229, 9, 20, 0.18),
+        0 30px 70px 18px rgba(229, 9, 20, 0.08),
+        0 60px 80px 50px rgba(0, 0, 0, 0.9);
+    animation: heroArcGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes heroArcGlow {
+    0% { box-shadow: 0 0 0 2px #e50914, 0 6px 15px 4px rgba(229,9,20,0.25), 0 15px 35px 8px rgba(229,9,20,0.12), 0 25px 60px 15px rgba(229,9,20,0.05), 0 60px 80px 50px rgba(0,0,0,0.9); }
+    100% { box-shadow: 0 0 0 2px #ff6b9d, 0 10px 25px 8px rgba(255,60,100,0.4), 0 22px 50px 12px rgba(229,9,20,0.22), 0 35px 80px 20px rgba(229,9,20,0.1), 0 60px 80px 50px rgba(0,0,0,0.9); }
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .hero-grid-banner {
+        height: 350px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-grid-banner {
+        height: 250px;
+    }
+}
+
 /* Sliders */
 .sliders-container {
     padding: 0 4%;
-    padding-top: 100px;
-    /* Space for navbar */
+    padding-top: 40px;
     position: relative;
     background: transparent;
     z-index: 3;
@@ -767,33 +994,63 @@ a:hover {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    width: 45px; /* Largura reduzida */
-    height: 120px; /* Altura proporcional aos cards de 180px */
-    background: rgba(0, 0, 0, 0.7);
-    color: white;
-    font-size: 2.5rem; /* Ícone um pouco menor */
-    border: none;
+    width: 50px;
+    height: 50px;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1.3rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
     cursor: pointer;
     z-index: 100;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: all 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
+/* Efeito hover */
 .nav-arrow:hover {
-    background: rgba(0, 0, 0, 0.9);
-    transform: translateY(-50%) scale(1.1);
+    background: rgba(229, 9, 20, 0.8);
+    color: #ffffff;
+    border-color: rgba(229, 9, 20, 0.6);
+    transform: translateY(-50%) scale(1.15);
+    box-shadow:
+        0 0 20px rgba(229, 9, 20, 0.4),
+        0 8px 25px rgba(0, 0, 0, 0.5);
+}
+
+/* Efeito active (ao clicar) */
+.nav-arrow:active {
+    transform: translateY(-50%) scale(0.95);
 }
 
 .nav-arrow-left {
-    left: 0;
-    border-radius: 0 4px 4px 0;
+    left: 5px;
 }
 
 .nav-arrow-right {
-    right: 0;
-    border-radius: 4px 0 0 4px;
+    right: 5px;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .nav-arrow {
+        width: 40px;
+        height: 40px;
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-arrow {
+        width: 35px;
+        height: 35px;
+        font-size: 1rem;
+    }
 }
 
 /* ========== TOP 10 CARDS - Netflix Style ========== */
@@ -1248,6 +1505,250 @@ a:hover {
 }
 
 /* Footer */
+/* ========== BANNER CTA COM GRID DE POSTERS ========== */
+.cta-banner {
+    position: relative;
+    width: 100%;
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    z-index: 5;
+}
+
+/* Grid de posters no fundo */
+.cta-poster-grid {
+    position: absolute;
+    top: -100px;
+    left: -100px;
+    right: -100px;
+    bottom: -100px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    transform: rotate(-10deg) scale(1.4);
+    z-index: 0;
+}
+
+/* Cada linha de posters */
+.poster-row {
+    display: flex;
+    gap: 10px;
+    animation: posterScroll 30s linear infinite;
+}
+
+.poster-row:nth-child(2) {
+    animation-direction: reverse;
+    animation-duration: 35s;
+}
+
+.poster-row:nth-child(3) {
+    animation-duration: 28s;
+}
+
+.poster-row:nth-child(4) {
+    animation-direction: reverse;
+    animation-duration: 32s;
+}
+
+/* Imagens dos posters */
+.poster-row img {
+    width: 180px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 8px;
+    flex-shrink: 0;
+}
+
+/* Animação de scroll horizontal */
+@keyframes posterScroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+/* Overlay sobre os posters */
+.cta-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:
+        radial-gradient(ellipse at 50% 40%, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.65) 70%),
+        linear-gradient(180deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.3) 55%, rgba(0,0,0,0.95) 75%, rgba(0,0,0,1) 100%);
+    z-index: 1;
+}
+
+/* Arco curvo rosa/vermelho */
+.cta-curve {
+    position: absolute;
+    bottom: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120%;
+    height: 50px;
+    z-index: 4;
+}
+
+.cta-curve::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 10%;
+    width: 80%;
+    height: 3px;
+    background: linear-gradient(90deg,
+        transparent 0%,
+        #e50914 15%,
+        #ff3d6e 35%,
+        #ff6b9d 50%,
+        #ff3d6e 65%,
+        #e50914 85%,
+        transparent 100%
+    );
+    border-radius: 50%;
+    box-shadow:
+        0 0 10px rgba(229, 9, 20, 0.6),
+        0 0 30px rgba(229, 9, 20, 0.3),
+        0 0 60px rgba(229, 9, 20, 0.1);
+    animation: arcGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes arcGlow {
+    0% { opacity: 0.7; }
+    100% { opacity: 1; }
+}
+
+/* Conteúdo */
+.cta-content {
+    position: relative;
+    z-index: 3;
+    text-align: center;
+    max-width: 700px;
+    padding: 80px 20px 80px;
+}
+
+.cta-title {
+    font-size: 3rem;
+    font-weight: 900;
+    color: #ffffff;
+    line-height: 1.1;
+    margin-bottom: 16px;
+    text-shadow: 0 4px 30px rgba(0, 0, 0, 0.9);
+}
+
+.cta-subtitle {
+    font-size: 1.1rem;
+    color: #b3b3b3;
+    margin-bottom: 30px;
+    line-height: 1.5;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+}
+
+/* Botões */
+.cta-buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.cta-btn-primary {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 30px;
+    background: #e50914;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(229, 9, 20, 0.4);
+}
+
+.cta-btn-primary:hover {
+    background: #f40612;
+    transform: scale(1.03);
+    box-shadow: 0 6px 25px rgba(229, 9, 20, 0.6);
+    color: #ffffff;
+}
+
+.cta-btn-secondary {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 30px;
+    background: rgba(109, 109, 110, 0.4);
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.cta-btn-secondary:hover {
+    background: rgba(109, 109, 110, 0.6);
+    color: #ffffff;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .cta-banner {
+        min-height: 450px;
+    }
+
+    .cta-title {
+        font-size: 2rem;
+    }
+
+    .cta-subtitle {
+        font-size: 0.95rem;
+    }
+
+    .poster-row img {
+        width: 130px;
+        height: 190px;
+    }
+
+    .cta-btn-primary,
+    .cta-btn-secondary {
+        padding: 12px 24px;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .cta-banner {
+        min-height: 380px;
+    }
+
+    .cta-title {
+        font-size: 1.6rem;
+    }
+
+    .poster-row img {
+        width: 100px;
+        height: 150px;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .cta-btn-primary,
+    .cta-btn-secondary {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
 footer {
     padding: 40px 4% 30px;
     color: #737373;

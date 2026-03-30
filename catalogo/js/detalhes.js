@@ -75,6 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (dados.youtube) {
         const videoId = getYouTubeId(dados.youtube);
 
+        // Botão Assistir - abre player fullscreen
         btnPlay.addEventListener('click', () => {
             videoIframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&controls=1&modestbranding=1`;
             videoPlayer.style.display = 'flex';
@@ -85,6 +86,12 @@ document.addEventListener('DOMContentLoaded', () => {
             videoIframe.src = '';
             videoPlayer.style.display = 'none';
         });
+
+        // Trailer embutido na página
+        const trailerSection = document.getElementById('trailer-section');
+        const trailerIframe = document.getElementById('trailer-iframe');
+        trailerSection.style.display = 'block';
+        trailerIframe.src = `https://www.youtube.com/embed/${videoId}?controls=1&modestbranding=1&rel=0`;
     } else {
         btnPlay.style.opacity = '0.5';
         btnPlay.style.cursor = 'default';

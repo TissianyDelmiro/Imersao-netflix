@@ -11,7 +11,7 @@
 
 **Uma reprodução fiel da interface da Netflix, desenvolvida como projeto educacional durante a Imersão Alura.**
 
-[Ver Demo](https://imersao-netflix.vercel.app) · [Reportar Bug](https://github.com/TissianyDelmiro/Imersao-netflix-/issues)
+[Ver Demo](https://imersao-netflix-mcpzqo5bt-tissianydelmiros-projects.vercel.app/catalogo/catalogo.html) · [Reportar Bug](https://github.com/TissianyDelmiro/Imersao-netflix-/issues)
 
 </div>
 

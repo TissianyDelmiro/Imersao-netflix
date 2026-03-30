@@ -12,7 +12,7 @@
 
 ### Uma reprodução da interface da Netflix desenvolvida como projeto de estudo e portfólio durante a Imersão Alura - Front-End na Era da IA.
 
-[Ver Demo](https://imersao-netflix-git-main-tissianydelmiros-projects.vercel.app) · [Reportar Bug](https://github.com/TissianyDelmiro/Imersao-netflix-/issues)
+[Ver Demo](https://tissyflix-dev.vercel.app/) · [Reportar Bug](https://github.com/TissianyDelmiro/Imersao-netflix-/issues)
 
 </div>
 

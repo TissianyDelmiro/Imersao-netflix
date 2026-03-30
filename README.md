@@ -234,7 +234,9 @@ Projeto desenvolvido durante a [Imersão Alura - Front-End na Era da IA](https:/
 
 ---
 
-## 🖼️ Créditos de Imagens
+## 🖼️ Créditos e Recursos
+
+### Imagens
 
 | Recurso | Fonte |
 |---|---|
@@ -243,13 +245,24 @@ Projeto desenvolvido durante a [Imersão Alura - Front-End na Era da IA](https:/
 | Logo Netflix | Wikimedia Commons |
 | Ícones | Font Awesome |
 
+### 🎨 Processo de criação dos Backgrounds
+
+Os backgrounds customizados das páginas (catálogo e detalhes) foram criados inteiramente com **CSS puro** (gradientes, pseudo-elementos e texturas), sem uso de imagens de fundo externas. O processo criativo seguiu estas etapas:
+
+1. **Pesquisa de referências** - Busca de imagens no Google com estilos visuais de interesse (gradientes neon, texturas de seda, faixas diagonais)
+2. **Análise visual** - Identificação das cores, direções e efeitos presentes nas referências
+3. **Tradução para CSS** - Reprodução dos efeitos usando `linear-gradient`, `radial-gradient`, `repeating-linear-gradient` e pseudo-elementos (`::before`, `::after`)
+4. **Iteração e refinamento** - Ajustes de cores, opacidades e posições até alcançar o resultado desejado
+
+> Os backgrounds não utilizam nenhuma imagem externa - são 100% código CSS, o que garante carregamento rápido e total controle sobre o visual.
+
 ### 🤖 Ferramentas de IA
 
 | Ferramenta | Uso |
 |---|---|
 | [GitHub Copilot](https://github.com/features/copilot) | Autocompletar código |
 | [Claude Code (Anthropic)](https://claude.ai/claude-code) | Assistente de desenvolvimento |
-| [Google Gemini](https://gemini.google.com) | Geração de imagens |
+| [Google Gemini](https://gemini.google.com) | Geração de imagens dos avatares |
 
 ---
 

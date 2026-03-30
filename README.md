@@ -172,6 +172,16 @@ O projeto está hospedado na **Vercel** com serverless functions para proteger a
 
 ---
 
+## 🖼️ Créditos de Imagens
+
+| Imagem | Fonte |
+|---|---|
+| Avatares dos perfis | Geradas por IA com **Google Gemini** |
+| Posters de filmes/séries | URLs públicas (Wikipedia, IMDb, TMDB) |
+| Logo Netflix | Wikimedia Commons |
+
+---
+
 ## 📝 Licença
 
 Este projeto é apenas para **fins educacionais**. Todos os direitos das marcas, logotipos e conteúdos pertencem aos seus respectivos proprietários.

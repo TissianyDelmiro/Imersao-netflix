@@ -1,4 +1,4 @@
-# 🎬 TissyFlix - Projeto de Estudo
+# 🎬 Netflix Clone - Projeto de Estudo
 
 <div align="center">
 

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix - Detalhes</title>
+    <link rel="stylesheet" href="detalhes.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Botão Voltar -->
+    <a href="catalogo.html" class="btn-voltar">
+        <i class="fas fa-arrow-left"></i> Voltar
+    </a>
+
+    <!-- Hero com imagem de fundo -->
+    <section class="hero" id="hero">
+        <div class="hero-backdrop" id="hero-backdrop"></div>
+        <div class="hero-gradient"></div>
+        <div class="hero-content">
+            <span class="hero-tag" id="hero-tag">ORIGINAL NETFLIX</span>
+            <h1 class="hero-title" id="hero-title"></h1>
+            <div class="hero-meta">
+                <span class="hero-match" id="hero-match">96% relevante</span>
+                <span class="hero-year" id="hero-year"></span>
+                <span class="hero-duration" id="hero-duration"></span>
+                <span class="hero-badge-quality">HD</span>
+                <span class="hero-badge-quality">5.1</span>
+            </div>
+            <p class="hero-desc" id="hero-desc"></p>
+            <div class="hero-buttons">
+                <button class="btn-play" id="btn-play">
+                    <i class="fas fa-play"></i> Assistir
+                </button>
+                <button class="btn-secondary">
+                    <i class="fas fa-plus"></i> Minha Lista
+                </button>
+                <button class="btn-icon-circle">
+                    <i class="fas fa-thumbs-up"></i>
+                </button>
+                <button class="btn-icon-circle">
+                    <i class="fas fa-share-alt"></i>
+                </button>
+            </div>
+            <div class="hero-tags" id="hero-tags">
+                <span>Empolgante</span>
+                <span>Suspense</span>
+                <span>Drama</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Player de vídeo (escondido por padrão) -->
+    <section class="video-player" id="video-player" style="display: none;">
+        <button class="btn-close-video" id="btn-close-video">
+            <i class="fas fa-times"></i>
+        </button>
+        <iframe id="video-iframe" frameborder="0"
+            allow="autoplay; encrypted-media; fullscreen"
+            allowfullscreen></iframe>
+    </section>
+
+    <!-- Informações extras -->
+    <section class="info-section">
+        <div class="info-grid">
+            <div class="info-main">
+                <h2>Sobre o título</h2>
+                <p class="info-desc" id="info-desc"></p>
+            </div>
+            <div class="info-side">
+                <p><span class="info-label">Elenco:</span> <span id="info-elenco">Não disponível</span></p>
+                <p><span class="info-label">Gêneros:</span> <span id="info-generos">Drama, Ação, Suspense</span></p>
+                <p><span class="info-label">Classificação:</span> <span id="info-class">16+</span></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Títulos semelhantes -->
+    <section class="similar-section">
+        <h2>Títulos semelhantes</h2>
+        <div class="similar-grid" id="similar-grid">
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-detalhes">
+        <p>Desenvolvido por <a href="https://github.com/TissianyDelmiro" target="_blank" class="highlight"><i class="fab fa-github"></i> Tissiany Delmiro</a></p>
+        <p class="year">© 2026</p>
+    </footer>
+
+    <script src="js/detalhes.js"></script>
+</body>
+
+</html>

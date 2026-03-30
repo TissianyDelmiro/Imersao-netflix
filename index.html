@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Logo Netflix -->
+    <div class="netflix-logo">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg" alt="Netflix">
+    </div>
+
+    <!-- Botão para alternar entre Dark e Light Mode -->
+    <button id="theme-toggle" aria-label="Alternar tema">
+        <span id="theme-icon">☀️</span>
+    </button>
+
+    <header>
+        <h1>Quem está assistindo?</h1>
+    </header>
+
+    <main>
+        <section  aria-label="Perfis de usuário">
+            <nav class="profiles">
+                <a href="catalogo/catalogo.html" class="profile">
+                    <figure>
+                        <img src="assets/perfil_1.png" alt="Uma ilustração 3D de Snowball de 'A Vida Secreta dos Bichos' como líder tático em uma cidade pós-apocalíptica.">
+                        <figcaption>Silva</figcaption>
+                    </figure>
+                </a>
+                <a href="catalogo/catalogo.html" class="profile">
+                    <figure>
+                        <img src="assets/perfil_2.png" alt="Uma ilustração 3D de Billy Butcher do The Boys sorrindo, com um fundo distópico e detalhes icônicos da série.">
+                        <figcaption>Guilherme</figcaption>
+                    </figure>
+                </a>
+                <a href="catalogo/catalogo.html" class="profile">
+                    <figure>
+                        <img src="assets/perfil_3.png"
+                            alt="Ilustração 3D da Barbie sorrindo, com cabelos loiros e vestido rosa, em um quarto decorado em tons de rosa e azul.">
+                        <figcaption>Vick</figcaption>
+                    </figure>
+                </a>
+                <a href="catalogo/catalogo.html" class="profile">
+                    <figure>
+                        <img src="assets/perfil_4.png"
+                            alt="Ilustração 3D de uma jovem de cabelo rosa e terno preto com uma flor branca na lapela, entre luzes neon azul e vermelha."">
+                        <figcaption>Tissiany</figcaption>
+                    </figure>
+                </a>
+
+                <!-- Botão Adicionar Perfil -->
+                <div class="profile add-profile">
+                    <figure>
+                        <div class="add-profile-icon">
+                            <span>+</span>
+                        </div>
+                        <figcaption>Adicionar perfil</figcaption>
+                    </figure>
+                </div>
+            </nav>
+
+            <!-- Botão Gerenciar Perfis -->
+            <button class="manage-profiles">Gerenciar perfis</button>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>Desenvolvido por <a href="https://github.com/TissianyDelmiro" target="_blank" class="highlight"><i class="fab fa-github"></i> Tissiany Delmiro</a></p>
+        <p class="year">© 2026</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/index.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

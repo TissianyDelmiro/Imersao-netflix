@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix Clone</title>
+    <link rel="stylesheet" href="catalogo.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <header class="navbar" id="navbar">
+        <div class="navbar-left">
+            <img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg"
+                alt="Netflix">
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="../index.html" class="active">Início</a></li>
+                    <li><a href="https://www.alura.com.br/">Séries</a></li>
+                    <li><a href="https://www.alura.com.br/">Filmes</a></li>
+                    <li><a href="https://www.alura.com.br/">Jogos</a></li>
+                    <li><a href="https://www.alura.com.br/">Bombando</a></li>
+                    <li><a href="https://www.alura.com.br/">Minha lista</a></li>
+                    <li><a href="https://www.alura.com.br/">Melhores da Alura</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="navbar-right">
+            <div class="search-container" id="search-container">
+                <i class="fas fa-search icon search-toggle" id="search-toggle"></i>
+                <input type="text" class="search-input" id="search-input" placeholder="Títulos, gente e gêneros">
+            </div>
+            <a href="../index.html" class="kids-link">Seu nome</a>
+            <div class="nav-notification">
+                <i class="fas fa-bell icon"></i>
+                <span class="notification-badge">42</span>
+            </div>
+            <div class="profile-menu" id="profile-menu">
+                <img class="profile-icon" id="profile-icon-nav" src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png"
+                    alt="Profile">
+                <i class="fas fa-caret-down icon profile-caret" id="profile-caret"></i>
+
+                <!-- Dropdown de perfis -->
+                <div class="profile-dropdown" id="profile-dropdown">
+                    <div class="dropdown-profiles" id="dropdown-profiles">
+                        <!-- Preenchido pelo JS -->
+                    </div>
+                    <div class="dropdown-divider"></div>
+                    <a href="../index.html" class="dropdown-link">
+                        <i class="fas fa-pencil-alt"></i> Gerenciar perfis
+                    </a>
+                    <a href="../index.html" class="dropdown-link">
+                        <i class="fas fa-sign-out-alt"></i> Sair da Netflix
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sliders Container -->
+    <main class="sliders-container" id="main-content">
+        <!-- Javascript will inject the rows here -->
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <a href="https://www.alura.com.br/" target="_blank">
+                <p>Imersão Alura AI</p>
+            </a>
+            <ul class="footer-links">
+                <li><a href="https://www.alura.com.br/" target="_blank">Perguntas frequentes</a></li>
+                <li><a href="https://www.alura.com.br/" target="_blank">Centro de ajuda</a></li>
+                <li><a href="https://www.alura.com.br/" target="_blank">Conta</a></li>
+                <li><a href="https://www.alura.com.br/" target="_blank">Imprensa</a></li>
+                <li><a href="https://www.alura.com.br/" target="_blank">Relações com investidores</a></li>
+                <li><a href="https://www.alura.com.br/" target="_blank">Carreiras</a></li>
+                <li><a href="https://www.alura.com.br/" target="_blank">Formas de assistir</a></li>
+                <li><a href="https://www.alura.com.br/" target="_blank">Termos de uso</a></li>
+                <li><a href="https://www.alura.com.br/" target="_blank">Privacidade</a></li>
+                <li><a href="https://www.alura.com.br/" target="_blank">Preferências de cookies</a></li>
+                <li><a href="https://www.alura.com.br/" target="_blank">Informações corporativas</a></li>
+                <li><a href="https://www.alura.com.br/" target="_blank">Entre em contato</a></li>
+                <li><a href="https://www.alura.com.br/" target="_blank">Teste de velocidade</a></li>
+                <li><a href="https://www.alura.com.br/" target="_blank">Avisos legais</a></li>
+                <li><a href="https://www.alura.com.br/" target="_blank">Só na Netflix</a></li>
+            </ul>
+
+            <!-- Créditos -->
+            <div class="footer-credits">
+                <div class="footer-credits-line"></div>
+                <p class="footer-project">
+                    Projeto <a href="https://www.alura.com.br/imersao" target="_blank">Imersão Alura</a>
+                </p>
+                <p class="footer-author">
+                    Desenvolvido por <a href="https://github.com/TissianyDelmiro" target="_blank" class="footer-name"><i class="fab fa-github"></i> Tissiany Delmiro</a>
+                </p>
+                <p class="footer-year">© 2026</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal de resultados da busca -->
+    <div class="search-overlay" id="search-overlay" style="display: none;">
+        <div class="search-overlay-header">
+            <h2>Resultados da busca</h2>
+            <button class="search-close" id="search-close"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="search-results" id="search-results"></div>
+    </div>
+
+    <!-- Script único sem módulos - funciona sem servidor -->
+    <script src="js/app.js"></script>
+    <script src="js/busca.js"></script>
+    <script src="js/perfis.js"></script>
+</body>
+
+</html>

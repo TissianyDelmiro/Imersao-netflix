@@ -1,0 +1,680 @@
+/* Reset - Remove espaçamentos padrão do navegador */
+* {
+    margin: 0; /* Remove margem externa de todos os elementos */
+    padding: 0; /* Remove espaçamento interno de todos os elementos */
+    box-sizing: border-box; /* Faz width e height incluírem padding e border */
+}
+
+/* Variáveis CSS - Cores da Netflix para reutilização (Dark Mode) */
+:root {
+    --netflix-red: #e50914; /* Vermelho característico da Netflix */
+    --netflix-black: #141414; /* Preto de fundo da Netflix */
+    --text-gray: #808080; /* Cinza para texto secundário */
+    --text-white: #ffffff; /* Branco para texto principal */
+
+    /* Variáveis dinâmicas para troca de tema */
+    --bg-color: #141414; /* Cor de fundo padrão (dark) */
+    --text-primary: #ffffff; /* Cor de texto principal */
+    --text-secondary: #808080; /* Cor de texto secundário */
+    --border-hover: #ffffff; /* Cor da borda no hover */
+}
+
+/* Variáveis CSS para Light Mode */
+body.light-mode {
+    --bg-color: #f5f5f5; /* Fundo cinza claro */
+    --text-primary: #141414; /* Texto escuro */
+    --text-secondary: #666666; /* Cinza médio */
+    --border-hover: #141414; /* Borda escura no hover */
+}
+
+/* Importa a fonte da Netflix do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Netflix+Sans:wght@400;500;700&family=Bebas+Neue&display=swap');
+
+/* Estilos do corpo da página */
+body {
+    font-family: 'Netflix Sans', 'Helvetica Neue', Arial, sans-serif;
+    background-color: #0d0016;
+    background-image:
+        /* Listras verticais laranja/vermelho */
+        repeating-linear-gradient(90deg,
+            transparent 0px, rgba(255,80,0,0.06) 2px, rgba(255,40,0,0.04) 4px,
+            transparent 6px, transparent 10px,
+            rgba(200,0,20,0.05) 12px, rgba(255,60,0,0.03) 14px,
+            transparent 16px, transparent 22px
+        ),
+        /* Gradiente horizontal: vermelho/laranja → roxo → azul */
+        linear-gradient(90deg,
+            rgba(200,60,0,0.2) 0%, rgba(220,40,0,0.18) 10%,
+            rgba(180,0,30,0.15) 20%, rgba(140,0,60,0.15) 30%,
+            rgba(100,0,80,0.18) 40%, rgba(80,0,100,0.2) 50%,
+            rgba(30,0,40,0.22) 60%, rgba(10,0,50,0.25) 70%,
+            rgba(5,0,60,0.25) 80%, rgba(8,3,65,0.28) 90%,
+            rgba(10,8,70,0.25) 100%
+        );
+    background-attachment: fixed;
+    color: var(--text-primary);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    transition: color 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Camadas de brilho e textura */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:
+        radial-gradient(ellipse at 5% 50%, rgba(255,100,0,0.12) 0%, transparent 35%),
+        radial-gradient(ellipse at 25% 40%, rgba(200,0,40,0.1) 0%, transparent 30%),
+        radial-gradient(ellipse at 45% 50%, rgba(120,0,100,0.12) 0%, transparent 35%),
+        radial-gradient(ellipse at 85% 50%, rgba(8,5,60,0.15) 0%, transparent 40%),
+        radial-gradient(ellipse at 95% 40%, rgba(10,10,70,0.12) 0%, transparent 30%),
+        repeating-linear-gradient(90deg,
+            transparent 0px, rgba(255,255,255,0.015) 1px,
+            transparent 2px, transparent 5px
+        );
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Linha de luz Netflix no topo */
+body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg,
+        transparent 0%,
+        rgba(229, 9, 20, 0.4) 20%,
+        rgba(229, 9, 20, 0.8) 50%,
+        rgba(229, 9, 20, 0.4) 80%,
+        transparent 100%
+    );
+    z-index: 1001;
+    pointer-events: none;
+    box-shadow: 0 0 15px rgba(229, 9, 20, 0.5), 0 0 40px rgba(229, 9, 20, 0.2);
+}
+
+/* Light Mode - background claro */
+body.light-mode {
+    background-color: #f0f0f0;
+    background-image:
+        radial-gradient(ellipse at 50% -20%, rgba(229, 9, 20, 0.06) 0%, transparent 50%),
+        linear-gradient(180deg, #f0f0f0 0%, #e8e8e8 40%, #f0f0f0 100%);
+}
+
+body.light-mode::before {
+    opacity: 0; /* Esconde partículas no light mode */
+}
+
+body.light-mode::after {
+    background: linear-gradient(90deg,
+        transparent 0%,
+        rgba(229, 9, 20, 0.3) 20%,
+        rgba(229, 9, 20, 0.6) 50%,
+        rgba(229, 9, 20, 0.3) 80%,
+        transparent 100%
+    );
+    box-shadow: 0 0 10px rgba(229, 9, 20, 0.3);
+}
+
+/* Scrollbar personalizada */
+::-webkit-scrollbar {
+    width: 8px; /* Largura fina */
+    background: #0a0a0a; /* Fundo escuro */
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #333 0%, #222 100%); /* Thumb com gradiente */
+    border-radius: 4px; /* Cantos arredondados */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #555 0%, #444 100%); /* Mais claro no hover */
+}
+
+/* Seleção de texto em vermelho Netflix */
+::selection {
+    background: var(--netflix-red);
+    color: white;
+}
+
+::-moz-selection {
+    background: var(--netflix-red);
+    color: white;
+}
+
+/* Logo Netflix */
+/* Logo Netflix com glow sutil */
+.netflix-logo {
+    position: fixed; /* Posição fixa na tela */
+    top: 2rem; /* 32px do topo */
+    left: 2rem; /* 32px da esquerda */
+    z-index: 1000; /* Fica acima de outros elementos */
+}
+
+.netflix-logo img {
+    width: 120px; /* Largura do logo */
+    height: auto; /* Altura automática */
+    display: block; /* Remove espaço extra */
+    filter: drop-shadow(0 0 15px rgba(229, 9, 20, 0.6)) drop-shadow(0 2px 8px rgba(0, 0, 0, 0.8)) brightness(1.2); /* Glow vermelho + sombra + brilho */
+    transition: filter 0.3s ease; /* Transição suave */
+}
+
+.netflix-logo img:hover {
+    filter: drop-shadow(0 0 25px rgba(229, 9, 20, 0.8)) drop-shadow(0 2px 8px rgba(0, 0, 0, 0.9)) brightness(1.3); /* Glow forte no hover */
+}
+
+/* Cabeçalho com o título */
+header {
+    text-align: center; /* Centraliza o texto */
+    margin-bottom: 2rem; /* Espaçamento de 32px abaixo */
+    position: relative; /* Para o z-index funcionar */
+    z-index: 2; /* Acima do pseudo-elemento do body */
+}
+
+/* Título "Quem está assistindo?" */
+header h1 {
+    font-size: 3.5vw; /* Tamanho responsivo: 3.5% da largura da tela */
+    font-weight: 400; /* Peso normal da fonte */
+    color: var(--text-primary); /* Cor dinâmica (branco ou preto) */
+    letter-spacing: 0.5px; /* Leve espaçamento entre letras */
+    transition: color 0.3s ease; /* Transição suave de cor */
+    text-shadow: 0 2px 20px rgba(0, 0, 0, 0.5); /* Sombra sutil para profundidade */
+    animation: fadeInTitle 1.2s ease-out; /* Animação de entrada */
+}
+
+/* Animação do título */
+@keyframes fadeInTitle {
+    0% {
+        opacity: 0;
+        transform: translateY(-15px);
+        filter: blur(4px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
+    }
+}
+
+/* Container principal do conteúdo */
+main {
+    width: 100%; /* Ocupa toda a largura disponível */
+    max-width: 1200px; /* Largura máxima de 1200px */
+    display: flex; /* Ativa flexbox */
+    justify-content: center; /* Centraliza o conteúdo */
+    position: relative; /* Para z-index */
+    z-index: 2; /* Acima dos efeitos de fundo */
+}
+
+/* Seção que contém os perfis */
+section {
+    width: 100%; /* Ocupa toda a largura do main */
+    display: flex; /* Ativa flexbox */
+    flex-direction: column; /* Organiza em coluna */
+    align-items: center; /* Centraliza conteúdo */
+    gap: 3rem; /* Espaçamento de 48px entre nav e botão */
+}
+
+/* Grid de perfis */
+.profiles {
+    display: flex; /* Ativa flexbox para organizar perfis */
+    flex-wrap: wrap; /* Permite quebra de linha quando necessário */
+    justify-content: center; /* Centraliza os perfis */
+    gap: 2vw; /* Espaçamento de 2% da largura entre perfis */
+    list-style: none; /* Remove marcadores de lista */
+    width: 100%; /* Ocupa toda largura disponível */
+    max-width: 1200px; /* Largura máxima aumentada para caber 5 perfis */
+}
+
+/* Card de cada perfil */
+.profile {
+    text-decoration: none; /* Remove sublinhado do link */
+    width: 10vw; /* Largura responsiva: 10% da viewport */
+    min-width: 84px; /* Largura mínima de 84px */
+    max-width: 180px; /* Largura máxima reduzida para 180px (cabe 5 perfis) */
+    cursor: pointer; /* Muda cursor para mãozinha ao passar */
+    display: flex; /* Ativa flexbox */
+    flex-direction: column; /* Organiza imagem e texto em coluna */
+    align-items: center; /* Centraliza conteúdo horizontalmente */
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1); /* Animação suave com curva */
+    flex-shrink: 0; /* Não encolhe o perfil */
+    animation: fadeInProfile 0.8s ease-out backwards; /* Animação de entrada */
+}
+
+/* Delays para animação cascata dos perfis */
+.profile:nth-child(1) { animation-delay: 0.2s; }
+.profile:nth-child(2) { animation-delay: 0.35s; }
+.profile:nth-child(3) { animation-delay: 0.5s; }
+.profile:nth-child(4) { animation-delay: 0.65s; }
+.profile:nth-child(5) { animation-delay: 0.8s; }
+
+/* Animação de entrada dos perfis */
+@keyframes fadeInProfile {
+    0% {
+        opacity: 0;
+        transform: translateY(25px) scale(0.95);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+}
+
+/* Efeito ao passar o mouse no perfil */
+.profile:hover {
+    transform: scale(1.1); /* Aumenta 10% o tamanho */
+}
+
+/* Container da imagem e legenda */
+.profile figure {
+    position: relative; /* Permite posicionamento absoluto interno */
+    width: 100%; /* Ocupa toda a largura do card */
+    margin: 0; /* Remove margem padrão do figure */
+}
+
+/* Imagem do perfil */
+.profile img {
+    width: 100%; /* Largura de 100% do container */
+    height: auto; /* Altura automática mantém proporção */
+    border-radius: 4px; /* Cantos arredondados de 4px */
+    border: 3px solid transparent; /* Borda transparente de 3px (aparece no hover) */
+    transition: border-color 0.3s ease; /* Animação suave de 0.3s na cor da borda */
+}
+
+/* Efeito da imagem ao passar o mouse */
+.profile:hover img {
+    border-color: var(--border-hover); /* Borda dinâmica aparece (branca ou preta) */
+}
+
+/* Nome do perfil abaixo da imagem */
+.profile figcaption {
+    margin-top: 0.5em; /* Espaçamento de 0.5em acima */
+    font-size: 1.3vw; /* Tamanho responsivo: 1.3% da largura da tela */
+    color: var(--text-secondary); /* Cor cinza dinâmica */
+    text-align: center; /* Centraliza o texto */
+    transition: color 0.3s ease; /* Animação suave de 0.3s na cor */
+}
+
+/* Efeito do nome ao passar o mouse */
+.profile:hover figcaption {
+    color: var(--text-primary); /* Muda para cor principal no hover */
+}
+
+/* Botão Adicionar Perfil */
+.add-profile {
+    cursor: pointer;
+    position: relative;
+}
+
+/* Círculo do ícone */
+.add-profile-icon {
+    width: 100%;
+    aspect-ratio: 1;
+    background: transparent;
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Anel externo com gradiente animado */
+.add-profile-icon::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    padding: 3px;
+    background: linear-gradient(135deg, #333 0%, #555 50%, #333 100%);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: destination-out;
+    transition: all 0.5s ease;
+}
+
+/* Símbolo + */
+.add-profile-icon span {
+    font-size: 3.5vw;
+    color: #808080;
+    font-weight: 300;
+    line-height: 1;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 2;
+}
+
+/* ===== HOVER ===== */
+
+/* Anel fica com gradiente vermelho Netflix */
+.add-profile:hover .add-profile-icon::before {
+    background: linear-gradient(135deg, #e50914, #ff6b35, #e50914, #b20710);
+    background-size: 300% 300%;
+    animation: borderGlow 2s linear infinite;
+    padding: 3px;
+}
+
+/* Fundo escuro sutil dentro do círculo */
+.add-profile:hover .add-profile-icon {
+    background: rgba(229, 9, 20, 0.08);
+    box-shadow:
+        0 0 30px rgba(229, 9, 20, 0.2),
+        0 0 60px rgba(229, 9, 20, 0.1);
+    transform: translateY(-5px);
+}
+
+/* + fica branco com glow */
+.add-profile:hover .add-profile-icon span {
+    color: #ffffff;
+    text-shadow: 0 0 20px rgba(229, 9, 20, 0.8), 0 0 40px rgba(229, 9, 20, 0.4);
+    transform: rotate(180deg);
+}
+
+/* Texto muda */
+.add-profile:hover figcaption {
+    color: var(--text-primary);
+    text-shadow: 0 0 10px rgba(229, 9, 20, 0.3);
+}
+
+/* Animação do gradiente da borda */
+@keyframes borderGlow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Botão Gerenciar Perfis */
+.manage-profiles {
+    margin-top: 1rem; /* Espaçamento de 16px acima */
+    padding: 0.5em 1.5em; /* Espaçamento interno: 8px vertical, 24px horizontal */
+    background-color: transparent; /* Fundo transparente */
+    color: var(--text-secondary); /* Texto cinza */
+    border: 1px solid var(--text-secondary); /* Borda cinza de 1px */
+    border-radius: 2px; /* Cantos levemente arredondados */
+    font-size: 1.2vw; /* Tamanho responsivo: 1.2% da largura da tela */
+    font-weight: 400; /* Peso normal */
+    letter-spacing: 1px; /* Espaçamento de 1px entre letras */
+    cursor: pointer; /* Muda cursor para mãozinha */
+    transition: all 0.3s ease; /* Transição suave de todas propriedades */
+}
+
+/* Efeito hover no botão gerenciar */
+.manage-profiles:hover {
+    color: var(--text-primary); /* Texto muda para cor principal */
+    border-color: var(--text-primary); /* Borda muda para cor principal */
+}
+
+/* Responsivo para telas médias (até 1280px) */
+@media (max-width: 1280px) {
+    header h1 {
+        font-size: 48px; /* Tamanho fixo de 48px */
+    }
+
+    .profile figcaption {
+        font-size: 18px; /* Tamanho fixo de 18px */
+    }
+
+    .add-profile-icon span {
+        font-size: 50px; /* Tamanho fixo do + */
+    }
+
+    .manage-profiles {
+        font-size: 16px; /* Tamanho fixo do texto */
+    }
+}
+
+/* Responsivo para tablets (até 960px) */
+@media (max-width: 960px) {
+    header h1 {
+        font-size: 42px; /* Reduz título para 42px */
+    }
+
+    .profiles {
+        gap: 3vw; /* Aumenta espaçamento para 3% */
+    }
+
+    .profile {
+        width: 15vw; /* Perfis maiores: 15% da viewport */
+        min-width: 120px; /* Largura mínima de 120px */
+    }
+
+    .profile figcaption {
+        font-size: 16px; /* Reduz texto para 16px */
+    }
+
+    .add-profile-icon span {
+        font-size: 45px; /* Ajusta tamanho do + */
+    }
+
+    .manage-profiles {
+        font-size: 15px; /* Ajusta tamanho do texto */
+    }
+}
+
+/* Responsivo para smartphones (até 600px) */
+@media (max-width: 600px) {
+    body {
+        padding: 1rem; /* Reduz padding para 16px */
+    }
+
+    header {
+        margin-bottom: 1.5rem; /* Reduz espaçamento para 24px */
+    }
+
+    header h1 {
+        font-size: 32px; /* Título menor: 32px */
+    }
+
+    .profiles {
+        gap: 4vw; /* Aumenta espaçamento para 4% */
+    }
+
+    .profile {
+        width: 35vw; /* Perfis ocupam 35% da viewport */
+        min-width: 100px; /* Largura mínima de 100px */
+        max-width: 150px; /* Largura máxima de 150px */
+    }
+
+    .profile figcaption {
+        font-size: 14px; /* Texto de 14px */
+        margin-top: 0.3em; /* Menor espaçamento acima */
+    }
+
+    .add-profile-icon span {
+        font-size: 40px; /* Ajusta tamanho do + para mobile */
+    }
+
+    .manage-profiles {
+        font-size: 14px; /* Texto menor para mobile */
+        padding: 0.4em 1.2em; /* Padding menor */
+    }
+
+    section {
+        gap: 2rem; /* Reduz espaçamento para 32px */
+    }
+}
+
+/* Responsivo para telas muito pequenas (até 400px) */
+@media (max-width: 400px) {
+    .netflix-logo img {
+        width: 75px; /* Logo ainda menor em telas muito pequenas */
+    }
+
+    header h1 {
+        font-size: 26px; /* Título ainda menor: 26px */
+    }
+
+    .profile {
+        width: 40vw; /* Perfis ocupam 40% da viewport */
+        max-width: 120px; /* Largura máxima de 120px */
+    }
+
+    .profile figcaption {
+        font-size: 12px; /* Texto menor: 12px */
+    }
+
+    .add-profile-icon span {
+        font-size: 35px; /* Ajusta tamanho do + para telas pequenas */
+    }
+
+    .manage-profiles {
+        font-size: 12px; /* Texto ainda menor */
+        padding: 0.4em 1em; /* Padding ainda menor */
+    }
+}
+
+/* Botão de Toggle Dark/Light Mode */
+#theme-toggle {
+    position: fixed; /* Posição fixa na tela */
+    top: 2rem; /* 32px do topo */
+    right: 2rem; /* 32px da direita */
+    width: 50px; /* Largura de 50px */
+    height: 50px; /* Altura de 50px */
+    border-radius: 50%; /* Círculo perfeito */
+    border: none; /* Sem borda */
+    background-color: var(--bg-color); /* Fundo com cor dinâmica */
+    color: var(--text-primary); /* Cor do ícone */
+    font-size: 1.5rem; /* Tamanho do emoji */
+    cursor: pointer; /* Muda cursor para mãozinha */
+    display: flex; /* Ativa flexbox */
+    align-items: center; /* Centraliza verticalmente */
+    justify-content: center; /* Centraliza horizontalmente */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Sombra sutil */
+    transition: all 0.3s ease; /* Transição suave de todas propriedades */
+    z-index: 1000; /* Fica acima de outros elementos */
+}
+
+/* Efeito hover no botão de toggle */
+#theme-toggle:hover {
+    transform: scale(1.1); /* Aumenta 10% */
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4); /* Sombra suave */
+}
+
+/* Efeito ativo (ao clicar) no botão */
+#theme-toggle:active {
+    transform: scale(0.95); /* Diminui levemente */
+}
+
+/* Responsivo - botão menor em telas pequenas */
+@media (max-width: 600px) {
+    .netflix-logo {
+        top: 1.5rem; /* Mais próximo do topo */
+        left: 1.5rem; /* Mais próximo da esquerda */
+    }
+
+    .netflix-logo img {
+        width: 90px; /* Logo menor em mobile */
+    }
+
+    #theme-toggle {
+        width: 45px; /* Reduz para 45px */
+        height: 45px; /* Reduz para 45px */
+        top: 1.5rem; /* Mais próximo do topo */
+        right: 1.5rem; /* Mais próximo da direita */
+        font-size: 1.3rem; /* Emoji menor */
+    }
+}
+
+/* Footer - Créditos */
+.footer {
+    position: fixed; /* Fixo na parte inferior */
+    bottom: 0; /* Cola no fundo */
+    left: 0; /* Cola na esquerda */
+    right: 0; /* Cola na direita */
+    padding: 1.2rem 2rem; /* Espaçamento interno */
+    background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.85) 40%, rgba(0, 0, 0, 0.95) 100%); /* Gradiente profundo */
+    backdrop-filter: blur(8px); /* Efeito blur */
+    -webkit-backdrop-filter: blur(8px);
+    text-align: center; /* Centraliza texto */
+    font-size: 0.85rem; /* Tamanho pequeno */
+    color: var(--text-secondary); /* Cor cinza */
+    z-index: 10; /* Fica acima de outros elementos */
+    border-top: 1px solid rgba(229, 9, 20, 0.15); /* Linha vermelha sutil no topo */
+}
+
+.footer p {
+    margin: 0.2rem 0; /* Pequeno espaçamento entre linhas */
+    letter-spacing: 1px; /* Espaçamento entre letras */
+}
+
+.footer .highlight {
+    color: var(--text-primary);
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.footer .highlight i {
+    margin-right: 4px;
+}
+
+.footer .highlight:hover {
+    color: var(--netflix-red);
+    text-decoration: none;
+    text-shadow: 0 0 15px rgba(229, 9, 20, 0.5);
+}
+
+.footer .year {
+    font-size: 0.75rem; /* Ano menor */
+    opacity: 0.7; /* Mais transparente */
+}
+
+/* Footer responsivo */
+@media (max-width: 600px) {
+    .footer {
+        padding: 0.8rem 1rem; /* Padding menor em mobile */
+        font-size: 0.75rem; /* Texto menor */
+    }
+
+    .footer .year {
+        font-size: 0.65rem; /* Ano ainda menor */
+    }
+}
+
+/* Acessibilidade - Respeita preferência de movimento reduzido */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important; /* Duração mínima de animações */
+        animation-iteration-count: 1 !important; /* Executa apenas 1 vez */
+        transition-duration: 0.01ms !important; /* Transições quase instantâneas */
+    }
+}
+
+/* Foco para navegação por teclado (outline padrão) */
+.profile:focus {
+    outline: 2px solid var(--border-hover); /* Borda dinâmica de 2px */
+    outline-offset: 4px; /* Espaçamento de 4px entre outline e elemento */
+}
+
+/* Foco visível para navegação por teclado (mais específico) */
+.profile:focus-visible {
+    outline: 2px solid var(--border-hover); /* Borda dinâmica de 2px */
+    outline-offset: 4px; /* Espaçamento de 4px entre outline e elemento */
+}
+
+/* Foco no botão de toggle */
+#theme-toggle:focus-visible {
+    outline: 2px solid var(--netflix-red); /* Borda vermelha Netflix */
+    outline-offset: 3px; /* Espaçamento de 3px */
+}

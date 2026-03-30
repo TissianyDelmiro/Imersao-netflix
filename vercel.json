@@ -1,0 +1,6 @@
+{
+    "rewrites": [
+        { "source": "/api/buscar", "destination": "/api/buscar" },
+        { "source": "/api/detalhes/:id", "destination": "/api/detalhes/[id]" }
+    ]
+}

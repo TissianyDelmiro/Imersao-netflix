@@ -21,10 +21,10 @@
 
 /* Variáveis CSS para Light Mode */
 body.light-mode {
-    --bg-color: #f5f5f5; /* Fundo cinza claro */
-    --text-primary: #141414; /* Texto escuro */
-    --text-secondary: #666666; /* Cinza médio */
-    --border-hover: #141414; /* Borda escura no hover */
+    --bg-color: #1e1e2a; /* Fundo escuro suave */
+    --text-primary: #e0e0e0; /* Texto claro */
+    --text-secondary: #a0a0a0; /* Cinza claro */
+    --border-hover: #ffffff; /* Borda clara no hover */
 }
 
 /* Importa a fonte da Netflix do Google Fonts */
@@ -106,16 +106,16 @@ body::after {
     box-shadow: 0 0 15px rgba(229, 9, 20, 0.5), 0 0 40px rgba(229, 9, 20, 0.2);
 }
 
-/* Light Mode - background claro */
+/* Light Mode - background mais claro que o dark, mas não branco */
 body.light-mode {
-    background-color: #f0f0f0;
+    background-color: #1e1e2a;
     background-image:
-        radial-gradient(ellipse at 50% -20%, rgba(229, 9, 20, 0.06) 0%, transparent 50%),
-        linear-gradient(180deg, #f0f0f0 0%, #e8e8e8 40%, #f0f0f0 100%);
+        radial-gradient(ellipse at 50% -20%, rgba(229, 9, 20, 0.08) 0%, transparent 50%),
+        linear-gradient(180deg, #1e1e2a 0%, #252535 40%, #1e1e2a 100%);
 }
 
 body.light-mode::before {
-    opacity: 0; /* Esconde partículas no light mode */
+    opacity: 0.3; /* Partículas sutis no light mode */
 }
 
 body.light-mode::after {
@@ -676,4 +676,326 @@ section {
 #theme-toggle:focus-visible {
     outline: 2px solid var(--netflix-red); /* Borda vermelha Netflix */
     outline-offset: 3px; /* Espaçamento de 3px */
+}
+
+/* ========== MODAL IMERSÃO ALURA ========== */
+.modal-imersao {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10000;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-imersao.active {
+    display: flex;
+}
+
+.modal-imersao-backdrop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    animation: modalFadeIn 0.4s ease-out;
+}
+
+.modal-imersao-content {
+    position: relative;
+    background: linear-gradient(145deg, #1a1a2e 0%, #16213e 50%, #0f0f23 100%);
+    border: 1px solid rgba(229, 9, 20, 0.3);
+    border-radius: 16px;
+    padding: 50px 40px;
+    max-width: 500px;
+    width: 90%;
+    text-align: center;
+    z-index: 1;
+    animation: modalSlideIn 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow:
+        0 0 40px rgba(229, 9, 20, 0.15),
+        0 25px 60px rgba(0, 0, 0, 0.5);
+}
+
+@keyframes modalFadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes modalSlideIn {
+    from {
+        opacity: 0;
+        transform: scale(0.85) translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+.modal-imersao-x {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background: none;
+    border: none;
+    color: #666;
+    font-size: 1.8rem;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.modal-imersao-x:hover {
+    color: #e50914;
+}
+
+.modal-imersao-logo {
+    margin-bottom: 20px;
+}
+
+.modal-imersao-tissy {
+    font-size: 2.2rem;
+    font-weight: 900;
+    color: #e50914;
+    letter-spacing: 6px;
+    font-family: 'Bebas Neue', 'Impact', sans-serif;
+    text-shadow: 0 0 30px rgba(229, 9, 20, 0.4);
+    animation: modalLogoGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes modalLogoGlow {
+    from { text-shadow: 0 0 20px rgba(229, 9, 20, 0.3); }
+    to { text-shadow: 0 0 40px rgba(229, 9, 20, 0.6), 0 0 80px rgba(229, 9, 20, 0.2); }
+}
+
+.modal-imersao-divider {
+    width: 60px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #e50914, transparent);
+    margin: 18px auto;
+}
+
+.modal-imersao-label {
+    font-size: 0.85rem;
+    color: #888;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+.modal-imersao-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 6px;
+}
+
+.modal-imersao-subtitle {
+    font-size: 1rem;
+    color: #e50914;
+    font-weight: 500;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+}
+
+.modal-imersao-desc {
+    font-size: 0.9rem;
+    color: #999;
+    line-height: 1.6;
+    margin-bottom: 22px;
+}
+
+.modal-imersao-tools {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 28px;
+}
+
+.modal-tool {
+    padding: 5px 14px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: #ccc;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.modal-imersao-buttons {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    margin-bottom: 25px;
+}
+
+.modal-btn-github {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    background: #e50914;
+    color: #fff;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.modal-btn-github:hover {
+    background: #ff1a27;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(229, 9, 20, 0.4);
+}
+
+.modal-btn-alura {
+    padding: 12px 24px;
+    background: transparent;
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.modal-btn-alura:hover {
+    border-color: #fff;
+    background: rgba(255, 255, 255, 0.05);
+    transform: translateY(-2px);
+}
+
+.modal-imersao-author {
+    font-size: 0.8rem;
+    color: #666;
+}
+
+.modal-imersao-author strong {
+    color: #aaa;
+}
+
+/* ========== MODAL CRIAR PERFIL ========== */
+.modal-criar-content {
+    max-width: 450px;
+}
+
+.modal-criar-titulo {
+    font-size: 1.6rem;
+    color: #ffffff;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.modal-criar-sub {
+    font-size: 0.9rem;
+    color: #888;
+    margin-bottom: 5px;
+}
+
+.modal-criar-label {
+    font-size: 0.8rem;
+    color: #aaa;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.modal-avatar-grid {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.modal-avatar {
+    width: 70px;
+    height: 70px;
+    border-radius: 8px;
+    cursor: pointer;
+    border: 3px solid transparent;
+    transition: all 0.3s ease;
+    opacity: 0.6;
+}
+
+.modal-avatar:hover {
+    opacity: 0.9;
+    transform: scale(1.08);
+}
+
+.modal-avatar.selected {
+    border-color: #e50914;
+    opacity: 1;
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(229, 9, 20, 0.4);
+}
+
+.modal-criar-input {
+    width: 100%;
+    padding: 14px 18px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    color: #ffffff;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s;
+    margin-bottom: 20px;
+}
+
+.modal-criar-input::placeholder {
+    color: #666;
+}
+
+.modal-criar-input:focus {
+    border-color: #e50914;
+}
+
+.modal-criar-botoes {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+}
+
+.modal-criar-erro {
+    font-size: 0.85rem;
+    color: #e50914;
+    margin-top: 12px;
+    min-height: 20px;
+}
+
+/* Modal responsivo */
+@media (max-width: 480px) {
+    .modal-imersao-content {
+        padding: 35px 25px;
+    }
+
+    .modal-imersao-tissy {
+        font-size: 1.6rem;
+    }
+
+    .modal-imersao-title {
+        font-size: 1.4rem;
+    }
+
+    .modal-imersao-buttons,
+    .modal-criar-botoes {
+        flex-direction: column;
+    }
+
+    .modal-btn-github,
+    .modal-btn-alura {
+        justify-content: center;
+    }
+
+    .modal-avatar {
+        width: 55px;
+        height: 55px;
+    }
 }

@@ -28,13 +28,14 @@
 
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="loading.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" media="print" onload="this.media='all'">
     <script src="loading.js"></script>
 </head>
 <body>
     <!-- Logo Netflix -->
     <div class="netflix-logo">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg" alt="Netflix">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg" alt="Netflix" width="200" height="54">
     </div>
 
     <!-- Botão para alternar entre Dark e Light Mode -->
@@ -51,27 +52,27 @@
             <nav class="profiles">
                 <a href="catalogo/catalogo.html" class="profile">
                     <figure>
-                        <img src="assets/perfil_1.png" alt="Uma ilustração 3D de Snowball de 'A Vida Secreta dos Bichos' como líder tático em uma cidade pós-apocalíptica.">
+                        <img src="assets/perfil_1.png" alt="Uma ilustração 3D de Snowball de 'A Vida Secreta dos Bichos' como líder tático em uma cidade pós-apocalíptica." width="150" height="150">
                         <figcaption>Silva</figcaption>
                     </figure>
                 </a>
                 <a href="catalogo/catalogo.html" class="profile">
                     <figure>
-                        <img src="assets/perfil_2.png" alt="Uma ilustração 3D de Billy Butcher do The Boys sorrindo, com um fundo distópico e detalhes icônicos da série.">
+                        <img src="assets/perfil_2.png" alt="Uma ilustração 3D de Billy Butcher do The Boys sorrindo, com um fundo distópico e detalhes icônicos da série." width="150" height="150">
                         <figcaption>Guilherme</figcaption>
                     </figure>
                 </a>
                 <a href="catalogo/catalogo.html" class="profile">
                     <figure>
                         <img src="assets/perfil_3.png"
-                            alt="Ilustração 3D da Barbie sorrindo, com cabelos loiros e vestido rosa, em um quarto decorado em tons de rosa e azul.">
+                            alt="Ilustração 3D da Barbie sorrindo, com cabelos loiros e vestido rosa, em um quarto decorado em tons de rosa e azul." width="150" height="150">
                         <figcaption>Vick</figcaption>
                     </figure>
                 </a>
                 <a href="catalogo/catalogo.html" class="profile">
                     <figure>
                         <img src="assets/perfil_4.png"
-                            alt="Ilustração 3D de uma jovem de cabelo rosa e terno preto com uma flor branca na lapela, entre luzes neon azul e vermelha."">
+                            alt="Ilustração 3D de uma jovem de cabelo rosa e terno preto com uma flor branca na lapela, entre luzes neon azul e vermelha." width="150" height="150">
                         <figcaption>Tissiany</figcaption>
                     </figure>
                 </a>
@@ -97,6 +98,67 @@
         <p>Desenvolvido por <a href="https://github.com/TissianyDelmiro" target="_blank" class="highlight"><i class="fab fa-github"></i> Tissiany Delmiro</a></p>
         <p class="year">© 2026</p>
     </footer>
+
+    <!-- Modal Imersão Alura (Gerenciar perfis) -->
+    <div class="modal-imersao" id="modal-imersao">
+        <div class="modal-imersao-backdrop" id="modal-imersao-close"></div>
+        <div class="modal-imersao-content">
+            <button class="modal-imersao-x" id="modal-imersao-x">&times;</button>
+            <div class="modal-imersao-logo">
+                <span class="modal-imersao-tissy">TISSYFLIX</span>
+            </div>
+            <div class="modal-imersao-divider"></div>
+            <p class="modal-imersao-label">Projeto desenvolvido na</p>
+            <h2 class="modal-imersao-title">Imersão Alura</h2>
+            <p class="modal-imersao-subtitle">Front-End na Era da IA</p>
+            <div class="modal-imersao-divider"></div>
+            <p class="modal-imersao-desc">Uma reprodução da interface da Netflix criada para fins educacionais, explorando HTML, CSS, JavaScript e Inteligência Artificial.</p>
+            <div class="modal-imersao-tools">
+                <span class="modal-tool">HTML5</span>
+                <span class="modal-tool">CSS3</span>
+                <span class="modal-tool">JavaScript</span>
+                <span class="modal-tool">Gemini</span>
+                <span class="modal-tool">Claude Code</span>
+            </div>
+            <div class="modal-imersao-buttons">
+                <a href="https://github.com/TissianyDelmiro/Imersao-netflix" target="_blank" class="modal-btn-github">
+                    <i class="fab fa-github"></i> Ver no GitHub
+                </a>
+                <a href="https://www.alura.com.br/imersao" target="_blank" class="modal-btn-alura">
+                    Conhecer a Imersao
+                </a>
+            </div>
+            <p class="modal-imersao-author">Desenvolvido por <strong>Tissiany Delmiro</strong></p>
+        </div>
+    </div>
+
+    <!-- Modal Criar Perfil -->
+    <div class="modal-imersao" id="modal-criar-perfil">
+        <div class="modal-imersao-backdrop" id="modal-criar-close"></div>
+        <div class="modal-imersao-content modal-criar-content">
+            <button class="modal-imersao-x" id="modal-criar-x">&times;</button>
+            <h2 class="modal-criar-titulo">Adicionar perfil</h2>
+            <p class="modal-criar-sub">Adicione um perfil para outra pessoa que usa a TissyFlix.</p>
+            <div class="modal-imersao-divider"></div>
+            <div class="modal-criar-avatares">
+                <p class="modal-criar-label">Escolha um avatar</p>
+                <div class="modal-avatar-grid" id="modal-avatar-grid">
+                    <img src="assets/Gemini_1.png" alt="Avatar 1" class="modal-avatar" data-avatar="assets/Gemini_1.png">
+                    <img src="assets/Gemini_2.png" alt="Avatar 2" class="modal-avatar" data-avatar="assets/Gemini_2.png">
+                    <img src="assets/Gemini_3.png" alt="Avatar 3" class="modal-avatar" data-avatar="assets/Gemini_3.png">
+                    <img src="assets/Gemini_4.png" alt="Avatar 4" class="modal-avatar" data-avatar="assets/Gemini_4.png">
+                </div>
+            </div>
+            <div class="modal-criar-nome">
+                <input type="text" id="input-nome-perfil" class="modal-criar-input" placeholder="Nome do perfil" maxlength="15">
+            </div>
+            <div class="modal-criar-botoes">
+                <button class="modal-btn-github" id="btn-salvar-perfil">Continuar</button>
+                <button class="modal-btn-alura" id="btn-cancelar-perfil">Cancelar</button>
+            </div>
+            <p class="modal-criar-erro" id="modal-criar-erro"></p>
+        </div>
+    </div>
 
     <!-- Scripts -->
     <script src="js/index.js"></script>

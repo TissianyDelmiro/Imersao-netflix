@@ -61,8 +61,10 @@ Este projeto foi construído com o apoio de ferramentas de Inteligência Artific
 
 ### 🎭 Sistema de Perfis
 - Seleção de perfis com avatares personalizados
+- **Criação de novos perfis** com escolha de avatar e nome personalizado (máximo 3)
 - Cada perfil possui seu próprio "Continuar assistindo"
-- Troca de perfil via dropdown na navbar (sem recarregar página inicial)
+- Troca de perfil via dropdown na navbar (scroll automático ao topo)
+- Modal "Gerenciar perfis" com informações do projeto Imersão Alura
 - Persistência de dados com localStorage
 
 ### 🎬 Catálogo de Filmes e Séries
@@ -88,16 +90,19 @@ Este projeto foi construído com o apoio de ferramentas de Inteligência Artific
 - Interface fiel à Netflix original
 - Backgrounds com gradientes e texturas customizadas (CSS puro)
 - Animações e transições suaves
+- **Animação cinematográfica** no hero do catálogo (zoom Ken Burns + fade-in do conteúdo)
 - Arco luminoso com glow pulsante no hero do catálogo (CSS puro)
 - Separador com efeito de profundidade na página de detalhes
 - Banner hero do catálogo com imagem gerada por **Google Gemini**
-- Dark/Light mode na tela de perfis
+- **Tela de loading** com logo TISSYFLIX e barra de progresso animada
+- Dark/Light mode na tela de perfis (tom escuro suave, não branco)
 - Totalmente responsivo (Desktop, Tablet e Mobile)
 - Scrollbar personalizada e seleção de texto estilizada
 
 ### 🚀 Diferenciais de Engenharia
 * **Experiência PWA (Progressive Web App):** O projeto utiliza um arquivo `site.webmanifest` e um conjunto completo de ícones Android/iOS. Isso permite que o usuário "instale" o **TissyFlix** no smartphone, aparecendo com ícone e nome personalizados na gaveta de aplicativos.
 * **Otimização de Assets:** Implementação de Favicon Pack profissional (arquivos `.ico` e `.png` em múltiplas resoluções) para garantir nitidez em todas as abas de navegadores e sistemas operacionais.
+* **Otimização de Performance:** Preload de imagens críticas (LCP), lazy loading nos posters, carregamento assíncrono de fontes externas, `width`/`height` em imagens para eliminar layout shift (CLS) e `fetchpriority="high"` no hero.
 * **Social Graph & SEO:** Configuração avançada de meta tags (**Open Graph** e **Twitter Cards**) com imagens de preview otimizadas para compartilhamento no WhatsApp e LinkedIn.
 
 **Pesquisa de referências de Cores:**
@@ -133,9 +138,10 @@ Imersao-netflix/
 ├── script.js                   # Funcionalidade Dark/Light mode
 ├── server.js                   # Servidor Express (dev local)
 ├── js/
-│   └── index.js                # Lógica de seleção e persistência de perfil
+│   └── index.js                # Lógica de seleção, criação e persistência de perfis
 ├── assets/
-│   ├── perfil_1.png ... 4.png  # Avatares dos perfis (gerados por IA)
+│   ├── perfil_1.png ... 4.png  # Avatares dos perfis padrão (gerados por IA Gemini)
+│   ├── Gemini_1.png ... 4.png  # Avatares extras para criação de perfis (gerados por IA Gemini)
 │   └── imagens/                # Imagens locais do projeto
 │       ├── silva/              # Imagens do perfil Silva
 │       ├── guilherme/          # Imagens do perfil Guilherme
@@ -231,7 +237,7 @@ Este projeto permitiu praticar e consolidar conhecimentos em:
 
 - **HTML Semântico** - Uso correto de tags para acessibilidade
 - **CSS Avançado** - Gradientes complexos, animações, pseudo-elementos, responsividade
-- **JavaScript Vanilla** - Sem dependência de frameworks, manipulação do DOM puro
+- **JavaScript Vanilla** - Sem dependência de frameworks, manipulação do DOM puro, modais interativos
 - **Integração com APIs** - Consumo de API REST com fetch
 - **Segurança** - Proteção de chaves de API com backend proxy
 - **Deploy** - Configuração de CI/CD com Vercel e serverless functions
@@ -260,7 +266,7 @@ Projeto desenvolvido durante a [Imersão Alura - Front-End na Era da IA](https:/
 
 | Recurso | Fonte |
 |---|---|
-| Avatares dos perfis | Gerados por IA com **Google Gemini** |
+| Avatares dos perfis (padrão e extras) | Gerados por IA com **Google Gemini** |
 | Banner hero do catálogo | Gerado por IA com **Google Gemini** |
 | Posters de filmes e séries | Baixados de fontes públicas (TMDB, Wikipedia, IMDb) e salvos localmente |
 | Logo Netflix | Wikimedia Commons |

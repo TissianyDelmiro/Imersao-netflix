@@ -33,6 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
             e.stopPropagation();
             localStorage.setItem('perfilAtivoNome', perfil.nome);
             localStorage.setItem('perfilAtivoImagem', perfil.img);
+            window.scrollTo(0, 0);
             window.location.reload();
         });
 

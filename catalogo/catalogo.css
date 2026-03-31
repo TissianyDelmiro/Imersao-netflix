@@ -928,9 +928,9 @@ a:hover {
         height: 350px;
     }
 
-    .hero-grid-arc::before {
-        height: 80px;
-        bottom: -40px;
+    .hero-grid-arc {
+        height: 40px;
+        bottom: -20px;
     }
 }
 
@@ -939,13 +939,12 @@ a:hover {
         height: 250px;
     }
 
-    .hero-grid-arc::before {
-        height: 60px;
-        bottom: -30px;
+    .hero-grid-arc {
+        height: 25px;
+        bottom: -10px;
         box-shadow:
-            0 0 0 1px #e50914,
-            0 -3px 10px 2px rgba(229, 9, 20, 0.2),
-            inset 0 10px 30px rgba(0, 0, 0, 0.8);
+            0 -1px 0 0 #e50914,
+            0 -3px 8px 1px rgba(229, 9, 20, 0.2);
     }
 }
 

@@ -49,6 +49,7 @@ Este projeto foi construído com o apoio de ferramentas de Inteligência Artific
 - Uso de IA como ferramenta de produtividade
 
 <img width="1920" height="945" alt="image" src="https://github.com/user-attachments/assets/2152cf36-ce1e-4d7e-a30d-bfe7d063eed0" />
+<img width="1920" height="945" alt="image" src="https://github.com/user-attachments/assets/7486889b-a7d3-455c-a9cc-0909255fce08" />
 <img width="1920" height="945" alt="image" src="https://github.com/user-attachments/assets/f8867c1b-c92a-4a59-95f3-a3c6da19f869" />
 <img width="1920" height="2925" alt="image" src="https://github.com/user-attachments/assets/f738ce2f-a861-4593-b936-8703d2dfe43b" />
 <img width="1920" height="3595" alt="image" src="https://github.com/user-attachments/assets/84d57cb5-a7c9-4b40-82de-f6af10359fb2" />

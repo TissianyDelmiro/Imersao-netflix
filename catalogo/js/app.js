@@ -427,9 +427,14 @@ document.addEventListener('DOMContentLoaded', () => {
         const hero = createHeroBanner();
         container.insertBefore(hero, container.firstChild);
 
-        // Botão de fechar o hero
+        // Botão de fechar o hero com animação
         document.getElementById('hero-close').addEventListener('click', () => {
-            document.getElementById('hero-banner').style.display = 'none';
+            const heroBanner = document.getElementById('hero-banner');
+            heroBanner.classList.add('hero-closing');
+            heroBanner.addEventListener('animationend', () => {
+                heroBanner.style.display = 'none';
+                heroBanner.classList.remove('hero-closing');
+            }, { once: true });
         });
 
         // Cria e adiciona todos os carrosséis

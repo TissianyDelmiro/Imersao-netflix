@@ -8,13 +8,13 @@ const themeIcon = document.getElementById('theme-icon');
 function applyTheme(theme) {
     // Adiciona ou remove a classe 'light-mode' no body
     if (theme === 'light') {
-        document.body.classList.add('light-mode'); // Ativa light mode
-        themeIcon.textContent = '🌙'; // Muda ícone para lua
-        themeIcon.setAttribute('aria-label', 'Ativar modo escuro'); // Acessibilidade
+        document.body.classList.add('light-mode');
+        themeIcon.className = 'fas fa-moon';
+        themeIcon.setAttribute('aria-label', 'Ativar modo escuro');
     } else {
-        document.body.classList.remove('light-mode'); // Ativa dark mode
-        themeIcon.textContent = '☀️'; // Muda ícone para sol
-        themeIcon.setAttribute('aria-label', 'Ativar modo claro'); // Acessibilidade
+        document.body.classList.remove('light-mode');
+        themeIcon.className = 'fas fa-sun';
+        themeIcon.setAttribute('aria-label', 'Ativar modo claro');
     }
 }
 

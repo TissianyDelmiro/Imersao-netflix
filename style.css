@@ -583,34 +583,55 @@ body.modo-edicao .profile-custom a {
 
 /* Botão de Toggle Dark/Light Mode */
 #theme-toggle {
-    position: fixed; /* Posição fixa na tela */
-    top: 2rem; /* 32px do topo */
-    right: 2rem; /* 32px da direita */
-    width: 50px; /* Largura de 50px */
-    height: 50px; /* Altura de 50px */
-    border-radius: 50%; /* Círculo perfeito */
-    border: none; /* Sem borda */
-    background-color: var(--bg-color); /* Fundo com cor dinâmica */
-    color: var(--text-primary); /* Cor do ícone */
-    font-size: 1.5rem; /* Tamanho do emoji */
-    cursor: pointer; /* Muda cursor para mãozinha */
-    display: flex; /* Ativa flexbox */
-    align-items: center; /* Centraliza verticalmente */
-    justify-content: center; /* Centraliza horizontalmente */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Sombra sutil */
-    transition: all 0.3s ease; /* Transição suave de todas propriedades */
-    z-index: 1000; /* Fica acima de outros elementos */
+    position: fixed;
+    top: 2rem;
+    right: 2rem;
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    border: 1px solid rgba(229, 9, 20, 0.2);
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    color: #e50914;
+    font-size: 1.1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3), 0 0 15px rgba(229, 9, 20, 0.1);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1000;
 }
 
-/* Efeito hover no botão de toggle */
+#theme-toggle i {
+    transition: transform 0.4s ease;
+}
+
 #theme-toggle:hover {
-    transform: scale(1.1); /* Aumenta 10% */
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4); /* Sombra suave */
+    transform: scale(1.08);
+    border-color: rgba(229, 9, 20, 0.5);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4), 0 0 25px rgba(229, 9, 20, 0.2);
 }
 
-/* Efeito ativo (ao clicar) no botão */
+#theme-toggle:hover i {
+    transform: rotate(30deg);
+}
+
 #theme-toggle:active {
-    transform: scale(0.95); /* Diminui levemente */
+    transform: scale(0.92);
+}
+
+body.light-mode #theme-toggle {
+    background: rgba(30, 30, 42, 0.6);
+    border-color: rgba(140, 0, 255, 0.3);
+    color: #c4a0ff;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3), 0 0 15px rgba(140, 0, 255, 0.15);
+}
+
+body.light-mode #theme-toggle:hover {
+    border-color: rgba(140, 0, 255, 0.5);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4), 0 0 25px rgba(140, 0, 255, 0.25);
 }
 
 /* Responsivo - botão menor em telas pequenas */

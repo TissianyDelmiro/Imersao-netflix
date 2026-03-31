@@ -1576,6 +1576,38 @@ a:hover {
     .cta-content {
         padding: 60px 15px 60px;
     }
+
+    .continuar-section .movie-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        overflow-x: visible;
+        padding: 10px 4% 20px 4%;
+    }
+
+    .continuar-section .movie-card {
+        min-width: unset;
+        width: 100%;
+        height: auto;
+        aspect-ratio: 16 / 9;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+    .continuar-section .movie-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        overflow-x: visible;
+        padding: 10px 4% 20px 4%;
+    }
+
+    .continuar-section .movie-card {
+        min-width: unset;
+        width: 100%;
+        height: auto;
+        aspect-ratio: 16 / 9;
+    }
 }
 
 /* Footer */

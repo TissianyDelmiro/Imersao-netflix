@@ -249,6 +249,9 @@ function createCard(item) {
 function createCarousel(category) {
     const section = document.createElement('div');
     section.className = 'slider-section';
+    if (category.title === "Continuar assistindo") {
+        section.classList.add('continuar-section');
+    }
 
     // Cabeçalho com título e indicadores
     const header = document.createElement('div');
@@ -266,10 +269,8 @@ function createCarousel(category) {
     section.appendChild(header);
 
     // Verifica se a seção deve ter setas de navegação
-    const isMobile = window.innerWidth <= 768;
     const hasArrows = category.title === "Top 10 em filmes no Brasil" ||
-                      category.title === "Só na Netflix" ||
-                      isMobile;
+                      category.title === "Só na Netflix";
 
     // Container que vai segurar a row e as setas
     const rowWrapper = document.createElement('div');

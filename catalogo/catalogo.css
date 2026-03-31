@@ -1560,6 +1560,26 @@ a:hover {
         font-size: 4vw;
         line-height: 4.5vw;
     }
+
+    .cta-curve {
+        bottom: 60px;
+    }
+}
+
+@media (max-width: 480px) {
+    .movie-card {
+        min-width: 150px;
+        width: 150px;
+        height: 85px;
+    }
+
+    .cta-curve {
+        bottom: 50px;
+    }
+
+    .cta-content {
+        padding: 60px 15px 60px;
+    }
 }
 
 /* Footer */

@@ -49,6 +49,7 @@ Este projeto foi construído com o apoio de ferramentas de Inteligência Artific
 - Uso de IA como ferramenta de produtividade
 
 <img width="1920" height="945" alt="Tela de Perfis" src="https://github.com/user-attachments/assets/a4487e51-7801-40cd-be4b-c785072acd8f" />
+<img width="1920" height="945" alt="image" src="https://github.com/user-attachments/assets/0664b096-0460-427f-956f-1d60b3eff10e" />
 <img width="1920" height="2925" alt="image" src="https://github.com/user-attachments/assets/6af1a7a0-428d-4cc5-ad41-1f77ae068706" />
 <img width="1920" height="2485" alt="Catálogo Completo" src="https://github.com/user-attachments/assets/c2e413c5-fd57-4aab-afcc-347083e03d58" />
 <img width="1920" height="2001" alt="image" src="https://github.com/user-attachments/assets/b02df468-ca62-4d15-a709-f43e6f0c3f5b" />

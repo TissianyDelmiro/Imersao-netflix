@@ -1,12 +1,18 @@
 // ========== DROPDOWN DE PERFIS ==========
 document.addEventListener('DOMContentLoaded', () => {
-    // Lista de perfis (mesmo do index.html)
+    // Lista de perfis (padrão + customizados do localStorage)
     const listaPerfis = [
         { nome: 'Silva', img: '../assets/perfil_1.png' },
         { nome: 'Guilherme', img: '../assets/perfil_2.png' },
         { nome: 'Vick', img: '../assets/perfil_3.png' },
         { nome: 'Tissiany', img: '../assets/perfil_4.png' },
     ];
+
+    // Adiciona perfis customizados
+    const perfisCustom = JSON.parse(localStorage.getItem('perfisCustom') || '[]');
+    perfisCustom.forEach(p => {
+        listaPerfis.push({ nome: p.nome, img: '../' + p.img });
+    });
 
     const dropdown = document.getElementById('profile-dropdown');
     const profileMenuEl = document.getElementById('profile-menu');

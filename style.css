@@ -315,6 +315,45 @@ section {
 }
 
 /* Botão Adicionar Perfil */
+/* Botão excluir perfil - escondido por padrão */
+.btn-excluir-perfil {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(229, 9, 20, 0.9);
+    color: #fff;
+    font-size: 0.75rem;
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s;
+    z-index: 10;
+}
+
+/* Modo edição - mostra o X e adiciona overlay nos perfis custom */
+body.modo-edicao .btn-excluir-perfil {
+    display: flex;
+    animation: modalFadeIn 0.3s ease-out;
+}
+
+body.modo-edicao .profile-custom img {
+    opacity: 0.6;
+}
+
+body.modo-edicao .profile-custom a {
+    pointer-events: none;
+}
+
+.btn-excluir-perfil:hover {
+    background: #ff1a27;
+    transform: scale(1.15);
+}
+
 .add-profile {
     cursor: pointer;
     position: relative;
@@ -612,41 +651,31 @@ section {
 }
 
 .footer p {
-    margin: 0.2rem 0; /* Pequeno espaçamento entre linhas */
-    letter-spacing: 1px; /* Espaçamento entre letras */
+    margin: 0;
+    letter-spacing: 0.5px;
 }
 
-.footer .highlight {
+.footer a {
     color: var(--text-primary);
     font-weight: 500;
     text-decoration: none;
     transition: all 0.3s ease;
 }
 
-.footer .highlight i {
-    margin-right: 4px;
-}
-
-.footer .highlight:hover {
+.footer a:hover {
     color: var(--netflix-red);
-    text-decoration: none;
     text-shadow: 0 0 15px rgba(229, 9, 20, 0.5);
 }
 
-.footer .year {
-    font-size: 0.75rem; /* Ano menor */
-    opacity: 0.7; /* Mais transparente */
+.footer .highlight i {
+    margin-right: 3px;
 }
 
 /* Footer responsivo */
 @media (max-width: 600px) {
     .footer {
-        padding: 0.8rem 1rem; /* Padding menor em mobile */
-        font-size: 0.75rem; /* Texto menor */
-    }
-
-    .footer .year {
-        font-size: 0.65rem; /* Ano ainda menor */
+        padding: 0.8rem 1rem;
+        font-size: 0.7rem;
     }
 }
 

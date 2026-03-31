@@ -412,7 +412,11 @@ document.addEventListener('DOMContentLoaded', () => {
         const profileIcon = document.querySelector('.profile-icon');
 
         if (kidsLink) kidsLink.textContent = nomePerfil;
-        if (profileIcon) profileIcon.src = imagemPerfil;
+        if (profileIcon) {
+            // Ajusta caminho relativo se estiver dentro da pasta catalogo
+            const img = imagemPerfil.startsWith('assets/') ? '../' + imagemPerfil : imagemPerfil;
+            profileIcon.src = img;
+        }
     }
 
     // Busca o container principal

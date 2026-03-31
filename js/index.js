@@ -21,23 +21,15 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // ========== Modal Imersão Alura - botão Gerenciar Perfis ==========
+    // ========== Gerenciar Perfis - modo edição ==========
     const manageBtn = document.querySelector('.manage-profiles');
-    const modalImersao = document.getElementById('modal-imersao');
-    const modalImersaoClose = document.getElementById('modal-imersao-close');
-    const modalImersaoX = document.getElementById('modal-imersao-x');
+    let modoEdicao = false;
 
-    if (manageBtn && modalImersao) {
+    if (manageBtn) {
         manageBtn.addEventListener('click', () => {
-            modalImersao.classList.add('active');
-        });
-
-        modalImersaoClose.addEventListener('click', () => {
-            modalImersao.classList.remove('active');
-        });
-
-        modalImersaoX.addEventListener('click', () => {
-            modalImersao.classList.remove('active');
+            modoEdicao = !modoEdicao;
+            document.body.classList.toggle('modo-edicao', modoEdicao);
+            manageBtn.textContent = modoEdicao ? 'Concluir' : 'Gerenciar perfis';
         });
     }
 
@@ -119,11 +111,15 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // ESC fecha qualquer modal
+    // ESC fecha modal ou sai do modo edição
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape') {
-            if (modalImersao) modalImersao.classList.remove('active');
             if (modalCriar) fecharModalCriar();
+            if (modoEdicao) {
+                modoEdicao = false;
+                document.body.classList.remove('modo-edicao');
+                manageBtn.textContent = 'Gerenciar perfis';
+            }
         }
     });
 
@@ -137,10 +133,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const perfisCustom = JSON.parse(localStorage.getItem('perfisCustom') || '[]');
 
-        perfisCustom.forEach(perfil => {
+        perfisCustom.forEach((perfil, index) => {
+            const wrapper = document.createElement('div');
+            wrapper.className = 'profile profile-custom';
+            wrapper.style.position = 'relative';
+
             const link = document.createElement('a');
             link.href = 'catalogo/catalogo.html';
-            link.className = 'profile profile-custom';
             link.innerHTML = `
                 <figure>
                     <img src="${perfil.img}" alt="${perfil.nome}" width="150" height="150">
@@ -153,7 +152,21 @@ document.addEventListener('DOMContentLoaded', () => {
                 localStorage.setItem('perfilAtivoImagem', perfil.img);
             });
 
-            nav.insertBefore(link, addProfileEl);
+            const btnExcluir = document.createElement('button');
+            btnExcluir.className = 'btn-excluir-perfil';
+            btnExcluir.innerHTML = '<i class="fas fa-times"></i>';
+            btnExcluir.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                const lista = JSON.parse(localStorage.getItem('perfisCustom') || '[]');
+                lista.splice(index, 1);
+                localStorage.setItem('perfisCustom', JSON.stringify(lista));
+                renderizarPerfisCustom();
+            });
+
+            wrapper.appendChild(link);
+            wrapper.appendChild(btnExcluir);
+            nav.insertBefore(wrapper, addProfileEl);
         });
     }
 

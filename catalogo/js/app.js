@@ -266,8 +266,10 @@ function createCarousel(category) {
     section.appendChild(header);
 
     // Verifica se a seção deve ter setas de navegação
+    const isMobile = window.innerWidth <= 768;
     const hasArrows = category.title === "Top 10 em filmes no Brasil" ||
-                      category.title === "Só na Netflix";
+                      category.title === "Só na Netflix" ||
+                      isMobile;
 
     // Container que vai segurar a row e as setas
     const rowWrapper = document.createElement('div');

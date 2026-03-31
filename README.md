@@ -50,10 +50,11 @@ Este projeto foi construído com o apoio de ferramentas de Inteligência Artific
 
 <img width="1920" height="945" alt="image" src="https://github.com/user-attachments/assets/2152cf36-ce1e-4d7e-a30d-bfe7d063eed0" />
 <img width="1920" height="945" alt="image" src="https://github.com/user-attachments/assets/f8867c1b-c92a-4a59-95f3-a3c6da19f869" />
-<img width="1920" height="2925" alt="image" src="https://github.com/user-attachments/assets/6af1a7a0-428d-4cc5-ad41-1f77ae068706" />
-<img width="1920" height="2485" alt="Catálogo Completo" src="https://github.com/user-attachments/assets/c2e413c5-fd57-4aab-afcc-347083e03d58" />
-<img width="1920" height="2001" alt="image" src="https://github.com/user-attachments/assets/b02df468-ca62-4d15-a709-f43e6f0c3f5b" />
-<img width="976" height="905" alt="image" src="https://github.com/user-attachments/assets/c5495c87-95ab-45e2-93e5-1b0ae63d728c" />
+<img width="1920" height="2925" alt="image" src="https://github.com/user-attachments/assets/f738ce2f-a861-4593-b936-8703d2dfe43b" />
+<img width="1920" height="3595" alt="image" src="https://github.com/user-attachments/assets/84d57cb5-a7c9-4b40-82de-f6af10359fb2" />
+<img width="1920" height="2030" alt="image" src="https://github.com/user-attachments/assets/e0807879-6044-47e5-b36f-987f741e427f" />
+<img width="1226" height="933" alt="image" src="https://github.com/user-attachments/assets/c5d722b0-f8ec-4e9e-8f12-8c9d6a1d1d36" />
+
 
 
 

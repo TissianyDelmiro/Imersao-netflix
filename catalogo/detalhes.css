@@ -122,12 +122,13 @@ body::before {
     background-size: cover;
     background-position: center 20%;
     background-repeat: no-repeat;
-    animation: zoomIn 20s ease-in-out infinite alternate;
+    animation: heroBackdropIn 8s ease-out forwards;
 }
 
-@keyframes zoomIn {
-    from { transform: scale(1); }
-    to { transform: scale(1.08); }
+@keyframes heroBackdropIn {
+    0% { transform: scale(1.25); opacity: 0; }
+    30% { opacity: 1; }
+    100% { transform: scale(1.05); opacity: 1; }
 }
 
 .hero-gradient {
@@ -191,13 +192,13 @@ body::before {
     left: 5%;
     max-width: 600px;
     z-index: 5;
-    animation: fadeInUp 0.8s ease-out;
+    animation: fadeInUp 1.2s ease-out 0.5s both;
 }
 
 @keyframes fadeInUp {
     from {
         opacity: 0;
-        transform: translateY(30px);
+        transform: translateY(40px);
     }
     to {
         opacity: 1;

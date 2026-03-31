@@ -158,10 +158,17 @@ document.addEventListener('DOMContentLoaded', () => {
             btnExcluir.addEventListener('click', (e) => {
                 e.preventDefault();
                 e.stopPropagation();
+                // Remove do localStorage pelo nome
                 const lista = JSON.parse(localStorage.getItem('perfisCustom') || '[]');
-                lista.splice(index, 1);
-                localStorage.setItem('perfisCustom', JSON.stringify(lista));
-                renderizarPerfisCustom();
+                const novaLista = lista.filter(p => p.nome !== perfil.nome);
+                localStorage.setItem('perfisCustom', JSON.stringify(novaLista));
+                // Remove só este elemento com animação
+                wrapper.style.transition = 'opacity 0.3s, transform 0.3s';
+                wrapper.style.opacity = '0';
+                wrapper.style.transform = 'scale(0.8)';
+                wrapper.addEventListener('transitionend', () => {
+                    wrapper.remove();
+                }, { once: true });
             });
 
             wrapper.appendChild(link);

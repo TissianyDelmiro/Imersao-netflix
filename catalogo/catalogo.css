@@ -1562,7 +1562,7 @@ a:hover {
     }
 
     .cta-curve {
-        bottom: 60px;
+        display: none;
     }
 }
 
@@ -1571,10 +1571,6 @@ a:hover {
         min-width: 150px;
         width: 150px;
         height: 85px;
-    }
-
-    .cta-curve {
-        bottom: 50px;
     }
 
     .cta-content {

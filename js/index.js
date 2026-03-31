@@ -103,11 +103,13 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             // Salva o novo perfil
-            perfisCustom.push({ nome: nome, img: avatarSelecionado });
+            const novoPerfil = { nome: nome, img: avatarSelecionado };
+            perfisCustom.push(novoPerfil);
             localStorage.setItem('perfisCustom', JSON.stringify(perfisCustom));
 
             fecharModalCriar();
-            renderizarPerfisCustom();
+            // Adiciona só o novo, sem re-renderizar tudo
+            adicionarPerfilNaTela(novoPerfil);
         });
     }
 
@@ -123,60 +125,52 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // ========== Renderizar perfis customizados ==========
-    function renderizarPerfisCustom() {
+    // ========== Adicionar um perfil customizado na tela ==========
+    function adicionarPerfilNaTela(perfil) {
         const nav = document.querySelector('.profiles');
         const addProfileEl = document.querySelector('.add-profile');
 
-        // Remove perfis custom anteriores
-        document.querySelectorAll('.profile-custom').forEach(el => el.remove());
+        const wrapper = document.createElement('div');
+        wrapper.className = 'profile profile-custom';
+        wrapper.style.position = 'relative';
 
-        const perfisCustom = JSON.parse(localStorage.getItem('perfisCustom') || '[]');
+        const link = document.createElement('a');
+        link.href = 'catalogo/catalogo.html';
+        link.innerHTML = `
+            <figure>
+                <img src="${perfil.img}" alt="${perfil.nome}" width="150" height="150">
+                <figcaption>${perfil.nome}</figcaption>
+            </figure>
+        `;
 
-        perfisCustom.forEach((perfil, index) => {
-            const wrapper = document.createElement('div');
-            wrapper.className = 'profile profile-custom';
-            wrapper.style.position = 'relative';
-
-            const link = document.createElement('a');
-            link.href = 'catalogo/catalogo.html';
-            link.innerHTML = `
-                <figure>
-                    <img src="${perfil.img}" alt="${perfil.nome}" width="150" height="150">
-                    <figcaption>${perfil.nome}</figcaption>
-                </figure>
-            `;
-
-            link.addEventListener('click', () => {
-                localStorage.setItem('perfilAtivoNome', perfil.nome);
-                localStorage.setItem('perfilAtivoImagem', perfil.img);
-            });
-
-            const btnExcluir = document.createElement('button');
-            btnExcluir.className = 'btn-excluir-perfil';
-            btnExcluir.innerHTML = '<i class="fas fa-times"></i>';
-            btnExcluir.addEventListener('click', (e) => {
-                e.preventDefault();
-                e.stopPropagation();
-                // Remove do localStorage pelo nome
-                const lista = JSON.parse(localStorage.getItem('perfisCustom') || '[]');
-                const novaLista = lista.filter(p => p.nome !== perfil.nome);
-                localStorage.setItem('perfisCustom', JSON.stringify(novaLista));
-                // Remove só este elemento com animação
-                wrapper.style.transition = 'opacity 0.3s, transform 0.3s';
-                wrapper.style.opacity = '0';
-                wrapper.style.transform = 'scale(0.8)';
-                wrapper.addEventListener('transitionend', () => {
-                    wrapper.remove();
-                }, { once: true });
-            });
-
-            wrapper.appendChild(link);
-            wrapper.appendChild(btnExcluir);
-            nav.insertBefore(wrapper, addProfileEl);
+        link.addEventListener('click', () => {
+            localStorage.setItem('perfilAtivoNome', perfil.nome);
+            localStorage.setItem('perfilAtivoImagem', perfil.img);
         });
+
+        const btnExcluir = document.createElement('button');
+        btnExcluir.className = 'btn-excluir-perfil';
+        btnExcluir.innerHTML = '<i class="fas fa-times"></i>';
+        btnExcluir.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            const lista = JSON.parse(localStorage.getItem('perfisCustom') || '[]');
+            const novaLista = lista.filter(p => p.nome !== perfil.nome);
+            localStorage.setItem('perfisCustom', JSON.stringify(novaLista));
+            wrapper.style.transition = 'opacity 0.3s, transform 0.3s';
+            wrapper.style.opacity = '0';
+            wrapper.style.transform = 'scale(0.8)';
+            wrapper.addEventListener('transitionend', () => {
+                wrapper.remove();
+            }, { once: true });
+        });
+
+        wrapper.appendChild(link);
+        wrapper.appendChild(btnExcluir);
+        nav.insertBefore(wrapper, addProfileEl);
     }
 
-    // Renderiza perfis salvos ao carregar
-    renderizarPerfisCustom();
+    // Renderiza perfis salvos ao carregar (só no load inicial)
+    const perfisIniciais = JSON.parse(localStorage.getItem('perfisCustom') || '[]');
+    perfisIniciais.forEach(perfil => adicionarPerfilNaTela(perfil));
 });

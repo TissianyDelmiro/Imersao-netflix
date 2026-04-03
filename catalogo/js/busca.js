@@ -127,9 +127,11 @@ async function buscarDetalhes(imdbID) {
         if (data.Response === 'False') return;
 
         // Salva os dados no localStorage para a página de detalhes
+        // Troca SX300 por SX1200 para imagem maior no banner
+        const posterHD = data.Poster !== 'N/A' ? data.Poster.replace('SX300', 'SX1200') : '';
         const detalhes = {
             img: data.Poster !== 'N/A' ? data.Poster : '',
-            heroImg: data.Poster !== 'N/A' ? data.Poster : '',
+            heroImg: posterHD,
             name: data.Title,
             desc: data.Plot,
             year: data.Year,

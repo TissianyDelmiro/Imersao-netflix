@@ -131,7 +131,7 @@ function createTop10Card(item) {
 
     const img = document.createElement('img');
     img.src = item.img;
-    img.alt = `Top ${item.rank}`;
+    img.alt = item.name || `Top ${item.rank}`;
     imgContainer.appendChild(img);
 
     card.appendChild(imgContainer);
@@ -149,7 +149,7 @@ function createCard(item) {
 
     const img = document.createElement('img');
     img.src = item.img;
-    img.alt = `Movie cover`;
+    img.alt = item.name || 'Filme';
 
     const iframe = document.createElement('iframe');
     iframe.frameBorder = "0";

@@ -5,7 +5,7 @@
 }
 
 :root {
-    --netflix-red: #E50914;
+    --netflix-red: #e50914;
     --dark-bg: #141414;
     --text-color: #ffffff;
 }
@@ -157,11 +157,6 @@ body::before {
         rgba(13, 0, 22, 1) 100%
     );
     z-index: 2;
-}
-
-/* Separador escondido - mantido para não quebrar HTML */
-.hero-arc-separator {
-    display: none;
 }
 
 .hero-content {

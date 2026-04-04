@@ -21,11 +21,9 @@ function applyTheme(theme) {
 // Verifica se existe preferência salva no localStorage
 const savedTheme = localStorage.getItem('theme');
 
-// Aplica o tema salvo ou usa dark mode como padrão
+// Aplica o tema salvo (se existir)
 if (savedTheme) {
-    applyTheme(savedTheme); // Aplica tema salvo
-} else {
-    applyTheme('dark'); // Tema padrão é dark (Netflix style)
+    applyTheme(savedTheme);
 }
 
 // Adiciona evento de clique no botão

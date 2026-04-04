@@ -917,11 +917,6 @@ a:hover {
         0 -8px 30px 5px rgba(229, 9, 20, 0.15);
 }
 
-@keyframes heroArcGlow {
-    0% { box-shadow: 0 0 0 2px #e50914, 0 6px 15px 4px rgba(229,9,20,0.25), 0 15px 35px 8px rgba(229,9,20,0.12), 0 25px 60px 15px rgba(229,9,20,0.05), 0 60px 80px 50px rgba(0,0,0,0.9); }
-    100% { box-shadow: 0 0 0 2px #ff6b9d, 0 10px 25px 8px rgba(255,60,100,0.4), 0 22px 50px 12px rgba(229,9,20,0.22), 0 35px 80px 20px rgba(229,9,20,0.1), 0 60px 80px 50px rgba(0,0,0,0.9); }
-}
-
 /* Responsivo */
 @media (max-width: 768px) {
     .hero-grid-banner {
